@@ -1,0 +1,13 @@
+---
+title: "ExerciseTest"
+---
+
+Welcome to the exercise collection for NUMA01.
+
+## Exercise Sheets
+
+- [Sheet 2](sheet_2.qmd)
+- [Sheet 3](sheet_3.qmd)
+- [Sheet 4](sheet_4.qmd)
+
+Explore each sheet to read the tasks and run the embedded Python examples directly in the browser.

@@ -1,0 +1,176 @@
+---
+title: "Sheet Four"
+format: html
+filters:
+  - pyodide
+---
+
+NUMA01: Computational Programming with Python  
+Malin Christersson, Robert Klöfkorn  
+
+The purpose of this training assignment is to experiment more with plotting and functions.  
+This assignment has 6 tasks.
+
+## Warming-up Exercises
+
+### Task 1
+
+Implement the following code.
+
+```{pyodide-python}
+#| read-only: false
+from numpy import *
+from matplotlib import pyplot as plt
+
+x = linspace(0, 2 * pi, 1000)
+f_x = cos(x)
+f_y = sin(x)
+
+plt.plot(f_x, f_y)
+plt.xlabel("cos(x)")
+plt.ylabel("sin(x)")
+plt.show()
+```
+
+### Task 2
+
+Read Chapter 6, section *Formatting* to learn how to change the plotting style and add a legend.
+
+---
+
+## Exercises
+
+### Task 3 – Complex valued functions
+
+The complex valued function $f(\varphi, r) = r e^{i \varphi}$ describes a circle with radius $r$ in the complex plane when $r$ is fixed and $\varphi$ varies between $0$ and $2\pi$. Set up a function that evaluates $f$ and plot it for a fixed value of $r$. Note: the real part of a complex variable $z$ is `z.real` and the imaginary part is `z.imag`. The imaginary unit $i$ is written as `1j` in Python.
+
+Then let $r$ vary from 0.1 to 1.0 and plot the corresponding concentric circles. You should see several circles centered at the origin.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def complex_circle(phi, r):
+    """Evaluate r * exp(i * phi) for arrays of phi and a scalar radius."""
+    return r * np.exp(1j * phi)
+
+
+phi = np.linspace(0, 2 * np.pi, 400)
+
+# TODO: choose a radius and plot the circle in the complex plane.
+radius = 0.5
+z = complex_circle(phi, radius)
+plt.plot(z.real, z.imag, label=f"r = {radius}")
+
+# TODO: add more circles for r in [0.1, 1.0].
+for r in np.linspace(0.1, 1.0, 10):
+    z = complex_circle(phi, r)
+    plt.plot(z.real, z.imag, alpha=0.6)
+
+plt.gca().set_aspect("equal", adjustable="box")
+plt.xlabel("Real part")
+plt.ylabel("Imaginary part")
+plt.title("Concentric circles from r * exp(i * phi)")
+plt.legend()
+plt.show()
+```
+
+### Task 4 – Euler's formula
+
+Study <https://en.wikipedia.org/wiki/Euler%27s_formula> and relate it to Task 3.
+
+### Task 5 – Newton's Method
+
+Newton's method iteratively finds a root of a function $f$ via
+
+$$
+ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
+$$
+
+Start from a value $x_0$ and stop when $|x_{n+1} - x_n| < \text{TOL}$ or after at most 400 iterations.
+
+Write a function `newton` that takes `f`, `fp` (the derivative), `x0` (start value), and `tol` (tolerance). It should return the last value and a flag `conv` indicating whether convergence was observed. Try the method with a function `myfunc` of your choice and its derivative `myfuncp`.
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+
+def newton(f, fp, x0, tol=1e-8, max_iter=400):
+    """Newton's method returning (root, converged)."""
+    x = x0
+    for _ in range(max_iter):
+        fx = f(x)
+        fpx = fp(x)
+        if fpx == 0:
+            raise ZeroDivisionError("Derivative is zero; cannot continue.")
+        x_next = x - fx / fpx
+        if abs(x_next - x) < tol:
+            return x_next, True
+        x = x_next
+    return x, False
+
+
+def myfunc(x):
+    return x**3 - 2 * x - 5
+
+
+def myfuncp(x):
+    return 3 * x**2 - 2
+
+
+root, converged = newton(myfunc, myfuncp, x0=2.0, tol=1e-8)
+print("Root:", root)
+print("Converged?", converged)
+```
+
+### Extra Task 6
+
+Compare the number of iterations needed to find a root within tolerance $1\times 10^{-8}$ for Newton's method and for the bisection method from Exercise 3. Store the values $|x_{n+1} - x_n|$ for each iteration $n$ for both methods and plot iteration number versus $|x_{n+1} - x_n|$. Discuss what you observe.
+
+```{pyodide-python}
+#| read-only: false
+import math
+import matplotlib.pyplot as plt
+
+# TODO:
+# Reuse or reimplement the bisection method from Exercise 3 here.
+# Collect |x_{n+1} - x_n| for both methods and plot them.
+
+def newton_track_errors(f, fp, x0, tol=1e-8, max_iter=100):
+    errors = []
+    x = x0
+    for _ in range(max_iter):
+        fx = f(x)
+        fpx = fp(x)
+        x_next = x - fx / fpx
+        errors.append(abs(x_next - x))
+        if errors[-1] < tol:
+            break
+        x = x_next
+    return x, errors
+
+# Example function and derivative.
+def f_example(x):
+    return x**3 - 2 * x - 5
+
+
+def fp_example(x):
+    return 3 * x**2 - 2
+
+# Newton errors
+_, newton_errors = newton_track_errors(f_example, fp_example, x0=2.0)
+
+# Placeholder for bisection errors (fill in based on your implementation)
+bisection_errors = []
+
+plt.semilogy(range(1, len(newton_errors) + 1), newton_errors, label="Newton")
+plt.semilogy(range(1, len(bisection_errors) + 1), bisection_errors, label="Bisection")
+plt.xlabel("Iteration")
+plt.ylabel("|x_{n+1} - x_n|")
+plt.title("Newton vs. Bisection convergence history")
+plt.legend()
+plt.show()
+```

@@ -1,0 +1,18 @@
+# RStudio / Quarto metadata
+*.knit.md
+*.utf8.md
+
+# Temporary files
+.DS_Store
+*.log
+*.aux
+*.out
+*.toc
+*.tmp
+
+# Python cache (if used in code)
+__pycache__/
+*.pyc
+
+# macOS filesystem files
+Icon?

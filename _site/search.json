@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "sheet_1.html",
+    "href": "sheet_1.html",
+    "title": "Sheet Two",
+    "section": "",
+    "text": "For a demonstration of a line plot on a polar axis, see ?@fig-polar.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_2.html",
+    "href": "sheet_2.html",
+    "title": "Sheet Two",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klöfkorn\nThe purpose of this training assignment is to work with lists and for loops.\nYou should start working on these exercises during the scheduled computer lab hours and complete them on your own at home.\nThis assignment has 14 tasks."
+  },
+  {
+    "objectID": "sheet_2.html#warming-up-exercises",
+    "href": "sheet_2.html#warming-up-exercises",
+    "title": "Sheet Two",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nRead the debugging documentation for Spyder:\nhttps://docs.spyder-ide.org/5/panes/debugging.html\nWhile you are there, check for other interesting topics that you want to know about your editor.\nIf you are using a different editor, then find out how to do debugging in your editor.\n\n\nTask 2\nImplement the following for loop and inspect each iteration with the debugger.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote: For \\(x_0 &lt; 1\\) the above iteration is called a fixed point iteration, because for all starting values \\(x_0 &lt; 1\\) this will converge to \\(0\\). For \\(x_0 &gt; 1\\) it will diverge. What about \\(x_0 = 1\\)?"
+  },
+  {
+    "objectID": "sheet_2.html#exercises",
+    "href": "sheet_2.html#exercises",
+    "title": "Sheet Two",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 3\nRecall the if statement from the lecture and check whether the expression \\(x^2 + 0.25x - 5\\) is zero for \\(x = 2.3\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nTry out this code segment from the lecture and test the listed commands.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow test:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\nWhat does the following command do?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAdd a comment in the code (or write in text) explaining what happens.\n\n\nTask 6\nConcatenate L3 and L4 to a new list L5.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\nUse the command range and a list comprehension to generate a list with 100 equidistantly spaced values between (and including) 0 and 1.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\nWhat does this code do?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nand this one:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nCompare the last element in the list ss with s.\nWhat is the value of i after the execution of the for loop?\n\n\nTask 9\nAgain, like in Task 7, set up a list with the name xplot which contains 100 equidistant values between 0 and 1. But this time, use a for-loop with a counter instead of a list comprehension.\nPay attention to the append-method for lists. You might need to generate an empty list first.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 10\nSet up a list yplot which contains the values \\(\\arctan(x)\\) for all the x in xplot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 11\nMake a plot of yplot versus xplot.\nUse the command plot. Depending on your environment, you might also need to run show() to show the plot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 12\nCompute $ _{i=1}^{200} $.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 13\nRead:\n\nChapter 1 up to (but not including) Encapsulating code with functions\nChapter 3.1 (Lists)\n\nof the course book, to repeat the things that you have used so far."
+  },
+  {
+    "objectID": "sheet_2.html#extra-task-14-in-case-you-want-an-extra-challenge",
+    "href": "sheet_2.html#extra-task-14-in-case-you-want-an-extra-challenge",
+    "title": "Sheet Two",
+    "section": "Extra Task 14 (in case you want an extra challenge)",
+    "text": "Extra Task 14 (in case you want an extra challenge)\nNow we use lists for recursions. Consider the recursion formula\n\\(u_{n+3} = u_{n+2} + h a\\left(\\frac{23}{12}u_{n+2} - \\frac{4}{3}u_{n+1} + \\frac{5}{12}u_n\\right)\\)\nwith \\(n = 0, \\dots, 1000\\), \\(h = \\frac{1}{1000}\\) and \\(a = -0.5\\).\n\nTask 14.1 – Build the list \\(u\\)\n\nCreate a list u.\nStore in its first three elements \\(e^{0}\\), \\(e^{h a}\\) and \\(e^{2h a}\\).\nThese represent \\(u_0\\), \\(u_1\\), and \\(u_2\\) in the above formula.\nBuild up the complete list from the recursion formula.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 14.2 – Build td, plot \\(t_d\\) versus u, and plot the error\n\nConstruct a second list td in which you store the values \\(n h\\), with \\(n = 0, \\dots, 1000\\).\nPlot td versus u.\nMake a second plot in which you plot the difference, i.e. \\(|e^{a t_n} - u_n|\\), where \\(t_n\\) represents the values inside the vector td.\n\nThe abs function computes the absolute value of a number.\nSet axis labels and a title (investigate the commands xlabel, ylabel and title).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIf you have time, plot both the approximation and the exact solution in the same figure and compare the result. The approximation is quite good, so you might want to plot the difference between the approximation and the exact solution instead.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe mathematical background to this problem will be taught in later courses when you become familiar with differential equations.\nGood luck!"
+  },
+  {
+    "objectID": "sheet_3.html",
+    "href": "sheet_3.html",
+    "title": "Sheet Three",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klöfkorn\nThe purpose of this training assignment is to repeat list comprehensions, practice slicing, work more with functions, and investigate sets in Python.\nYou should not run the code before you have written down what it will do when executed.\nThis assignment has 8 tasks."
+  },
+  {
+    "objectID": "sheet_3.html#warming-up-exercises",
+    "href": "sheet_3.html#warming-up-exercises",
+    "title": "Sheet Three",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nAssume we have stored the following values in a list:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\nWhat parts of the following code generate an error, and why?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_3.html#programming-exercises",
+    "href": "sheet_3.html#programming-exercises",
+    "title": "Sheet Three",
+    "section": "Programming Exercises",
+    "text": "Programming Exercises\n\nTask 3\nTransition to the programming exercises below.\n\n\nTask 4\nLet a distance table between some villages be given by:\n\\[\n\\begin{bmatrix}\n0 & 20 & 30 & 40\\\\\n20 & 0 & 50 & 60\\\\\n30 & 50 & 0 & 70\\\\\n40 & 60 & 70 & 0\n\\end{bmatrix}\n\\]\n\nConstruct a list (of lists) that contains this data. Call this list distance.\n\nConstruct from this list a list reddistance which contains only the relevant data in the following form:\n\n\\[\n\\begin{bmatrix}\n20\\\\\n30 & 50\\\\\n40 & 60 & 70\n\\end{bmatrix}\n\\]\nUse slicing for this task. Solve it two ways: (1) with for-loops and (2) using only list comprehension and slicing.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\nLet \\(A\\) and \\(B\\) be sets. The set \\((A \\setminus B) \\cup (B \\setminus A)\\) is called the symmetric difference of the two sets.\nWrite a function that performs this operation. Compare your results to A.symmetric_difference(B).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\nStudy other operations on sets. You find a complete list by using tab-completion in Spyder/IPython after typing A. where A is a previously defined set in Python.\nIn particular, study the methods update and intersection_update. Explain the difference between the commands intersection and intersection_update.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\nTest in Python (with a couple of examples) the statement that the empty set is a subset of any set.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\nBisection Method. A continuous function that changes sign in an interval \\([a, b]\\) has at least one root there. Such a root can be found by the bisection method.\nStarting from \\([a, b]\\), investigate the sign change in the subintervals \\([a, \\tfrac{a+b}{2}]\\) and \\([\\tfrac{a+b}{2}, b]\\). If the sign changes in the first subinterval, redefine \\(b := \\tfrac{a+b}{2}\\); otherwise set \\(a := \\tfrac{a+b}{2}\\). Repeat until \\(b - a\\) is less than a given tolerance. Note that a sign change is characterized by \\(f(a) f(b) &lt; 0\\).\nImplement this algorithm. It needs the initial interval \\([a, b]\\) and the tolerance. Test the method with the function \\(\\arctan(x)\\) and with the polynomial \\(f(x) = 3x^2 - 5\\) in the interval \\([-0.5, 0.6]\\) and alternatively in \\([-1.5, -0.4]\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ExerciseTest",
+    "section": "",
+    "text": "Welcome to the exercise collection for NUMA01."
+  },
+  {
+    "objectID": "index.html#exercise-sheets",
+    "href": "index.html#exercise-sheets",
+    "title": "ExerciseTest",
+    "section": "Exercise Sheets",
+    "text": "Exercise Sheets\n\nSheet 2\nSheet 3\nSheet 4\n\nExplore each sheet to read the tasks and run the embedded Python examples directly in the browser."
+  },
+  {
+    "objectID": "sheet_4.html",
+    "href": "sheet_4.html",
+    "title": "Sheet Four",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klöfkorn\nThe purpose of this training assignment is to experiment more with plotting and functions.\nThis assignment has 6 tasks."
+  },
+  {
+    "objectID": "sheet_4.html#warming-up-exercises",
+    "href": "sheet_4.html#warming-up-exercises",
+    "title": "Sheet Four",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nImplement the following code.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\nRead Chapter 6, section Formatting to learn how to change the plotting style and add a legend."
+  },
+  {
+    "objectID": "sheet_4.html#exercises",
+    "href": "sheet_4.html#exercises",
+    "title": "Sheet Four",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 3 – Complex valued functions\nThe complex valued function \\(f(\\varphi, r) = r e^{i \\varphi}\\) describes a circle with radius \\(r\\) in the complex plane when \\(r\\) is fixed and \\(\\varphi\\) varies between \\(0\\) and \\(2\\pi\\). Set up a function that evaluates \\(f\\) and plot it for a fixed value of \\(r\\). Note: the real part of a complex variable \\(z\\) is z.real and the imaginary part is z.imag. The imaginary unit \\(i\\) is written as 1j in Python.\nThen let \\(r\\) vary from 0.1 to 1.0 and plot the corresponding concentric circles. You should see several circles centered at the origin.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4 – Euler’s formula\nStudy https://en.wikipedia.org/wiki/Euler%27s_formula and relate it to Task 3.\n\n\nTask 5 – Newton’s Method\nNewton’s method iteratively finds a root of a function \\(f\\) via\n\\[\nx_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}.\n\\]\nStart from a value \\(x_0\\) and stop when \\(|x_{n+1} - x_n| &lt; \\text{TOL}\\) or after at most 400 iterations.\nWrite a function newton that takes f, fp (the derivative), x0 (start value), and tol (tolerance). It should return the last value and a flag conv indicating whether convergence was observed. Try the method with a function myfunc of your choice and its derivative myfuncp.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nExtra Task 6\nCompare the number of iterations needed to find a root within tolerance \\(1\\times 10^{-8}\\) for Newton’s method and for the bisection method from Exercise 3. Store the values \\(|x_{n+1} - x_n|\\) for each iteration \\(n\\) for both methods and plot iteration number versus \\(|x_{n+1} - x_n|\\). Discuss what you observe.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  }
+]

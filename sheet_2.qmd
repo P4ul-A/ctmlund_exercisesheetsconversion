@@ -1,0 +1,372 @@
+---
+title: "Sheet Two"
+format: html
+filters:
+  - pyodide
+---
+
+NUMA01: Computational Programming with Python  
+Malin Christersson, Robert Klöfkorn  
+
+The purpose of this training assignment is to work with lists and `for` loops.  
+You should start working on these exercises during the scheduled computer lab hours and complete them on your own at home.
+
+This assignment has 14 tasks.
+
+## Warming-up Exercises
+
+### Task 1
+
+Read the debugging documentation for Spyder:  
+<https://docs.spyder-ide.org/5/panes/debugging.html>  
+
+While you are there, check for other interesting topics that you want to know about your editor.  
+If you are using a different editor, then find out how to do debugging in your editor.
+
+### Task 2
+
+Implement the following `for` loop and inspect each iteration with the debugger.
+
+```{pyodide-python}
+#| read-only: false
+x = 0.5  # x_0
+for i in range(200):
+    x = x**2  # x_i
+print(f"The result after {i+1} iterations is {x}")
+```
+
+Note: For $x_0 < 1$ the above iteration is called a fixed point iteration, because for all starting values $x_0 < 1$ this will converge to $0$. For $x_0 > 1$ it will diverge. What about $x_0 = 1$?
+
+---
+
+## Exercises
+
+### Task 3
+
+Recall the `if` statement from the lecture and check whether the expression $x^2 + 0.25x - 5$ is zero for $x = 2.3$.
+
+```{pyodide-python}
+#| read-only: false
+x = 2.3
+
+# TODO:
+# Use an if-statement to check whether x**2 + 0.25*x - 5 is zero.
+# Print a suitable message together with the value of the expression.
+```
+
+### Task 4
+
+Try out this code segment from the lecture and test the listed commands.
+
+```{pyodide-python}
+#| read-only: false
+L = [1, 2]
+L3 = 3 * L
+
+print("L3:", L3)
+```
+
+Now test:
+
+```{pyodide-python}
+#| read-only: false
+# Test index access on L3
+L = [1, 2]
+L3 = 3 * L
+
+print("L3[0] =", L3[0])
+print("L3[-1] =", L3[-1])
+
+# Uncomment the next line to see what happens.
+# print("L3[10] =", L3[10])
+```
+
+### Task 5
+
+What does the following command do?
+
+```{pyodide-python}
+#| read-only: false
+L = [1, 2]
+L3 = 3 * L
+
+L4 = [k**2 for k in L3]
+print("L3:", L3)
+print("L4:", L4)
+```
+
+Add a comment in the code (or write in text) explaining what happens.
+
+### Task 6
+
+Concatenate `L3` and `L4` to a new list `L5`.
+
+```{pyodide-python}
+#| read-only: false
+L = [1, 2]
+L3 = 3 * L
+L4 = [k**2 for k in L3]
+
+# TODO:
+# Create a new list L5 that concatenates L3 and L4.
+# Then print L5.
+```
+
+### Task 7
+
+Use the command `range` and a list comprehension to generate a list with 100 equidistantly spaced values between (and including) 0 and 1.
+
+```{pyodide-python}
+#| read-only: false
+# TODO:
+# Use range and a list comprehension to create a list x_vals
+# with 100 equidistant values between 0 and 1 (inclusive).
+
+n = 100
+
+# Hint: you can use something like i/(n-1) for i in range(n).
+```
+
+### Task 8
+
+What does this code do?
+
+```{pyodide-python}
+#| read-only: false
+s = 0
+for i in range(0, 500):
+    s = s + i
+print(s)
+```
+
+and this one:
+
+```{pyodide-python}
+#| read-only: false
+ss = [0]
+for i in range(1, 500):
+    ss.append(ss[i - 1] + i)
+
+print("Last element in ss:", ss[-1])
+print("Length of ss:", len(ss))
+
+# After the loop, what is the value of i?
+print("Value of i after the loop:", i)
+```
+
+Compare the last element in the list `ss` with `s`.  
+What is the value of `i` after the execution of the `for` loop?
+
+### Task 9
+
+Again, like in Task 7, set up a list with the name `xplot` which contains 100 equidistant values between 0 and 1. But this time, use a `for`-loop with a counter instead of a list comprehension.
+
+Pay attention to the `append`-method for lists. You might need to generate an empty list first.
+
+```{pyodide-python}
+#| read-only: false
+# TODO:
+# Build xplot with 100 equidistant values between 0 and 1 using a for-loop.
+
+xplot = []
+n = 100
+
+# Hint:
+# for k in range(n):
+#     value = ...
+#     xplot.append(value)
+
+print("First 5 elements of xplot:", xplot[:5])
+print("Last 5 elements of xplot:", xplot[-5:])
+print("Number of elements in xplot:", len(xplot))
+```
+
+### Task 10
+
+Set up a list `yplot` which contains the values $\arctan(x)$ for all the `x` in `xplot`.
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+# Assuming xplot has already been created in Task 9.
+# If not, you can recreate it here.
+
+# TODO:
+# Create yplot containing math.atan(x) for all x in xplot.
+
+yplot = []
+
+print("First 5 elements of yplot:", yplot[:5])
+print("Number of elements in yplot:", len(yplot))
+```
+
+### Task 11
+
+Make a plot of `yplot` versus `xplot`.  
+Use the command `plot`. Depending on your environment, you might also need to run `show()` to show the plot.
+
+```{pyodide-python}
+#| read-only: false
+# Simple plot of yplot versus xplot.
+
+import matplotlib.pyplot as plt
+
+# Make sure xplot and yplot exist (from Tasks 9 and 10)
+print("len(xplot) =", len(xplot))
+print("len(yplot) =", len(yplot))
+
+plt.plot(xplot, yplot)
+plt.xlabel("x")
+plt.ylabel("arctan(x)")
+plt.title("Plot of arctan(x) versus x")
+plt.show()
+```
+
+### Task 12
+
+Compute $ \sum_{i=1}^{200} \frac{1}{\sqrt{i}} $.
+
+```{pyodide-python}
+#| read-only: false
+# Compute the sum from i = 1 to 200 of 1/sqrt(i)
+
+import math
+
+s = 0.0
+for i in range(1, 201):
+    s += 1 / math.sqrt(i)
+
+print("Sum from i=1 to 200 of 1/sqrt(i) =", s)
+```
+
+### Task 13
+
+Read:
+
+- Chapter 1 up to (but not including) *Encapsulating code with functions*
+- Chapter 3.1 (*Lists*)
+
+of the course book, to repeat the things that you have used so far.
+
+---
+
+## Extra Task 14 (in case you want an extra challenge)
+
+Now we use lists for recursions. Consider the recursion formula
+
+$u_{n+3} = u_{n+2} + h a\left(\frac{23}{12}u_{n+2} - \frac{4}{3}u_{n+1} + \frac{5}{12}u_n\right)$
+
+with $n = 0, \dots, 1000$, $h = \frac{1}{1000}$ and $a = -0.5$.
+
+### Task 14.1 – Build the list $u$
+
+1. Create a list `u`.  
+   Store in its first three elements $e^{0}$, $e^{h a}$ and $e^{2h a}$.  
+   These represent $u_0$, $u_1$, and $u_2$ in the above formula.  
+   Build up the complete list from the recursion formula.
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+h = 1/1000
+a = -0.5
+
+# Initial values:
+u = [
+    math.exp(0),        # u_0 = e^(0)
+    math.exp(h * a),    # u_1 = e^(h a)
+    math.exp(2 * h * a) # u_2 = e^(2 h a)
+]
+
+# TODO:
+# Use the recursion formula to build u_n for n = 0,...,1000.
+# Remember that u already has u_0, u_1, u_2.
+
+N = 1000  # up to u_1000
+
+for n in range(0, N - 2):
+    u_n = u[n]
+    u_n1 = u[n + 1]
+    u_n2 = u[n + 2]
+
+    u_next = u_n2 + h * a * (
+        (23/12) * u_n2
+        - (4/3) * u_n1
+        + (5/12) * u_n
+    )
+    u.append(u_next)
+
+print("Length of u:", len(u))
+print("First 5 entries of u:", u[:5])
+print("Last 5 entries of u:", u[-5:])
+```
+
+### Task 14.2 – Build `td`, plot $t_d$ versus `u`, and plot the error
+
+2. Construct a second list `td` in which you store the values $n h$, with $n = 0, \dots, 1000$.  
+   Plot `td` versus `u`.  
+   Make a second plot in which you plot the difference, i.e. $|e^{a t_n} - u_n|$, where $t_n$ represents the values inside the vector `td`.
+
+The `abs` function computes the absolute value of a number.  
+Set axis labels and a title (investigate the commands `xlabel`, `ylabel` and `title`).
+
+```{pyodide-python}
+#| read-only: false
+import math
+import matplotlib.pyplot as plt
+
+h = 1/1000
+a = -0.5
+
+# Build td:
+td = [n * h for n in range(0, 1001)]
+
+# Check that td and u have compatible lengths.
+print("Length of td:", len(td))
+print("Length of u:", len(u))
+
+# Plot td versus u
+plt.plot(td, u)
+plt.xlabel("t")
+plt.ylabel("u(t)")
+plt.title("Approximate solution u_n")
+plt.show()
+
+# Compute and plot the error |e^(a t_n) - u_n|
+errors = [abs(math.exp(a * t) - u_val) for t, u_val in zip(td, u)]
+
+plt.plot(td, errors)
+plt.xlabel("t")
+plt.ylabel("|e^{a t} - u_n|")
+plt.title("Error between exact and approximate solution")
+plt.show()
+```
+
+If you have time, plot both the approximation and the exact solution in the same figure and compare the result. The approximation is quite good, so you might want to plot the difference between the approximation and the exact solution instead.
+
+```{pyodide-python}
+#| read-only: false
+import math
+import matplotlib.pyplot as plt
+
+h = 1/1000
+a = -0.5
+
+td = [n * h for n in range(0, 1001)]
+exact = [math.exp(a * t) for t in td]
+
+# Plot exact and approximate in the same figure
+plt.plot(td, exact, label="Exact: exp(a t)")
+plt.plot(td, u, label="Approximation u_n")
+plt.xlabel("t")
+plt.ylabel("Value")
+plt.title("Exact vs Approximate Solution")
+plt.legend()
+plt.show()
+```
+
+The mathematical background to this problem will be taught in later courses when you become familiar with differential equations.
+
+Good luck!
