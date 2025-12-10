@@ -89,5 +89,12 @@
     "title": "Sheet Four",
     "section": "Exercises",
     "text": "Exercises\n\nTask 3 – Complex valued functions\nThe complex valued function \\(f(\\varphi, r) = r e^{i \\varphi}\\) describes a circle with radius \\(r\\) in the complex plane when \\(r\\) is fixed and \\(\\varphi\\) varies between \\(0\\) and \\(2\\pi\\). Set up a function that evaluates \\(f\\) and plot it for a fixed value of \\(r\\). Note: the real part of a complex variable \\(z\\) is z.real and the imaginary part is z.imag. The imaginary unit \\(i\\) is written as 1j in Python.\nThen let \\(r\\) vary from 0.1 to 1.0 and plot the corresponding concentric circles. You should see several circles centered at the origin.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4 – Euler’s formula\nStudy https://en.wikipedia.org/wiki/Euler%27s_formula and relate it to Task 3.\n\n\nTask 5 – Newton’s Method\nNewton’s method iteratively finds a root of a function \\(f\\) via\n\\[\nx_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}.\n\\]\nStart from a value \\(x_0\\) and stop when \\(|x_{n+1} - x_n| &lt; \\text{TOL}\\) or after at most 400 iterations.\nWrite a function newton that takes f, fp (the derivative), x0 (start value), and tol (tolerance). It should return the last value and a flag conv indicating whether convergence was observed. Try the method with a function myfunc of your choice and its derivative myfuncp.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nExtra Task 6\nCompare the number of iterations needed to find a root within tolerance \\(1\\times 10^{-8}\\) for Newton’s method and for the bisection method from Exercise 3. Store the values \\(|x_{n+1} - x_n|\\) for each iteration \\(n\\) for both methods and plot iteration number versus \\(|x_{n+1} - x_n|\\). Discuss what you observe.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is just a test :)"
   }
 ]

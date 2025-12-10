@@ -2,4 +2,5 @@
 title: "About"
 ---
 
-About this site
+This is just a test :)
+

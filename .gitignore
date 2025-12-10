@@ -16,3 +16,6 @@ __pycache__/
 
 # macOS filesystem files
 Icon?
+
+/.quarto/
+**/*.quarto_ipynb
