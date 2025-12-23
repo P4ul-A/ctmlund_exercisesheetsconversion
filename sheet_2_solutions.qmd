@@ -1,0 +1,189 @@
+---
+title: "Sheet Two Solutions"
+format: html
+filters:
+  - pyodide
+---
+
+### Task 3
+
+```{pyodide-python}
+#| read-only: false
+x = 2.3
+value = x**2 + 0.25 * x - 5
+
+# Use a small tolerance for floating-point comparisons.
+if abs(value) < 1e-12:
+    print("The expression is zero.")
+else:
+    print("The expression is not zero.")
+
+print("Value:", value)
+```
+
+### Task 6
+
+```{pyodide-python}
+#| read-only: false
+L = [1, 2]
+L3 = 3 * L
+L4 = []
+for k in L3:
+    L4.append(k**2)
+
+# Concatenate L3 and L4.
+L5 = L3 + L4
+print("L5:", L5)
+```
+
+### Task 7
+
+```{pyodide-python}
+#| read-only: false
+n = 100
+
+# 100 equidistant values between 0 and 1 (inclusive).
+x_vals = []
+for i in range(n):
+    x_vals.append(i / (n - 1))
+
+print("First 5:", x_vals[:5])
+print("Last 5:", x_vals[-5:])
+print("Count:", len(x_vals))
+```
+
+### Task 9
+
+```{pyodide-python}
+#| read-only: false
+xplot = []
+n = 100
+
+for k in range(n):
+    xplot.append(k / (n - 1))
+
+print("First 5:", xplot[:5])
+print("Last 5:", xplot[-5:])
+print("Count:", len(xplot))
+```
+
+### Task 10
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+# Build xplot if it does not exist.
+xplot = []
+for i in range(100):
+    xplot.append(i / 99)
+
+# Compute arctan for each x.
+yplot = []
+for x in xplot:
+    yplot.append(math.atan(x))
+
+print("First 5:", yplot[:5])
+print("Count:", len(yplot))
+```
+
+### Task 11
+
+```{pyodide-python}
+#| read-only: false
+import math
+import matplotlib.pyplot as plt
+
+xplot = []
+for i in range(100):
+    xplot.append(i / 99)
+
+yplot = []
+for x in xplot:
+    yplot.append(math.atan(x))
+
+plt.plot(xplot, yplot)
+plt.xlabel("x")
+plt.ylabel("arctan(x)")
+plt.title("Plot of arctan(x) versus x")
+plt.show()
+```
+
+### Task 12
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+s = 0.0
+for i in range(1, 201):
+    s += 1 / math.sqrt(i)
+
+print("Sum:", s)
+```
+
+### Task 14.1
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+h = 1 / 1000
+a = -0.5
+N = 1000
+
+# Initial values u_0, u_1, u_2.
+u = [
+    math.exp(0),
+    math.exp(h * a),
+    math.exp(2 * h * a),
+]
+
+# Build u_3 to u_1000 using the recursion formula.
+for n in range(0, N - 2):
+    u_n = u[n]
+    u_n1 = u[n + 1]
+    u_n2 = u[n + 2]
+
+    u_next = u_n2 + h * a * (
+        (23 / 12) * u_n2
+        - (4 / 3) * u_n1
+        + (5 / 12) * u_n
+    )
+    u.append(u_next)
+
+print("Length:", len(u))
+```
+
+### Task 14.2
+
+```{pyodide-python}
+#| read-only: false
+import math
+import matplotlib.pyplot as plt
+
+h = 1 / 1000
+a = -0.5
+
+# Build t values.
+td = []
+for n in range(0, 1001):
+    td.append(n * h)
+
+plt.plot(td, u)
+plt.xlabel("t")
+plt.ylabel("u(t)")
+plt.title("Approximate solution u_n")
+plt.show()
+
+# Compute and plot the error.
+errors = []
+for t, u_val in zip(td, u):
+    errors.append(abs(math.exp(a * t) - u_val))
+
+plt.plot(td, errors)
+plt.xlabel("t")
+plt.ylabel("|e^{a t} - u_n|")
+plt.title("Error between exact and approximate solution")
+plt.show()
+```

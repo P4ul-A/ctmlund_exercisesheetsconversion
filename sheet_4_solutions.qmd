@@ -1,0 +1,125 @@
+---
+title: "Sheet Four Solutions"
+format: html
+filters:
+  - pyodide
+---
+
+### Task 3
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+def complex_circle(phi, r):
+    """Evaluate r * exp(i * phi) for array phi and scalar r."""
+    return r * np.exp(1j * phi)
+
+phi = np.linspace(0.0, 2.0 * np.pi, 400)
+
+# Plot one circle.
+radius = 0.5
+z = complex_circle(phi, radius)
+plt.plot(z.real, z.imag, label=f"r = {radius}")
+
+# Plot several circles.
+radii = np.linspace(0.1, 1.0, 10)
+for r in radii:
+    z = complex_circle(phi, r)
+    plt.plot(z.real, z.imag, alpha=0.6)
+
+plt.gca().set_aspect("equal", adjustable="box")
+plt.xlabel("Real part")
+plt.ylabel("Imaginary part")
+plt.title("Concentric circles")
+plt.legend()
+plt.show()
+```
+
+### Task 5
+
+```{pyodide-python}
+#| read-only: false
+def newton(f, fp, x0, tol=1e-8, max_iter=400):
+    """Newton's method returning (root, converged)."""
+    x = x0
+    for _ in range(max_iter):
+        fx = f(x)
+        fpx = fp(x)
+        if fpx == 0:
+            raise ZeroDivisionError("Derivative is zero.")
+        x_next = x - fx / fpx
+        if abs(x_next - x) < tol:
+            return x_next, True
+        x = x_next
+    return x, False
+
+def myfunc(x):
+    return x**3 - 2 * x - 5
+
+def myfuncp(x):
+    return 3 * x**2 - 2
+
+root, converged = newton(myfunc, myfuncp, x0=2.0, tol=1e-8)
+print("Root:", root)
+print("Converged:", converged)
+```
+
+### Task 6
+
+```{pyodide-python}
+#| read-only: false
+import matplotlib.pyplot as plt
+
+def bisection_track(f, a, b, tol=1e-8, max_iter=200):
+    """Bisection method that records |x_{n+1} - x_n|."""
+    fa = f(a)
+    fb = f(b)
+    if fa * fb > 0:
+        raise ValueError("f(a) and f(b) must have opposite signs.")
+
+    errors = []
+    for _ in range(max_iter):
+        mid = 0.5 * (a + b)
+        errors.append(abs(b - a))
+        fm = f(mid)
+        if errors[-1] < tol:
+            return mid, errors
+        if fa * fm <= 0:
+            b, fb = mid, fm
+        else:
+            a, fa = mid, fm
+    return mid, errors
+
+def newton_track(f, fp, x0, tol=1e-8, max_iter=200):
+    """Newton's method that records |x_{n+1} - x_n|."""
+    x = x0
+    errors = []
+    for _ in range(max_iter):
+        fx = f(x)
+        fpx = fp(x)
+        x_next = x - fx / fpx
+        errors.append(abs(x_next - x))
+        if errors[-1] < tol:
+            return x_next, errors
+        x = x_next
+    return x, errors
+
+def f_example(x):
+    return x**3 - 2 * x - 5
+
+def fp_example(x):
+    return 3 * x**2 - 2
+
+_, newton_errors = newton_track(f_example, fp_example, x0=2.0)
+_, bisection_errors = bisection_track(f_example, 1.0, 3.0)
+
+plt.semilogy(range(1, len(newton_errors) + 1), newton_errors, label="Newton")
+plt.semilogy(range(1, len(bisection_errors) + 1), bisection_errors, label="Bisection")
+plt.xlabel("Iteration")
+plt.ylabel("|x_{n+1} - x_n|")
+plt.title("Newton vs. Bisection convergence")
+plt.legend()
+plt.show()
+```

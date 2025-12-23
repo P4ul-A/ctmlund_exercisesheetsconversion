@@ -7,7 +7,26 @@ Welcome to the exercise collection for NUMA01.
 ## Exercise Sheets
 
 - [Sheet 2](sheet_2.qmd)
+- [Sheet 2 Solutions](sheet_2_solutions.qmd)
 - [Sheet 3](sheet_3.qmd)
+- [Sheet 3 Solutions](sheet_3_solutions.qmd)
 - [Sheet 4](sheet_4.qmd)
+- [Sheet 4 Solutions](sheet_4_solutions.qmd)
+- [Sheet 5](sheet_5.qmd)
+- [Sheet 5 Solutions](sheet_5_solutions.qmd)
+- [Sheet 6](sheet_6.qmd)
+- [Sheet 6 Solutions](sheet_6_solutions.qmd)
+- [Sheet 7](sheet_7.qmd)
+- [Sheet 7 Solutions](sheet_7_solutions.qmd)
+- [Sheet 8](sheet_8.qmd)
+- [Sheet 8 Solutions](sheet_8_solutions.qmd)
+- [Sheet 9](sheet_9.qmd)
+- [Sheet 9 Solutions](sheet_9_solutions.qmd)
+- [Sheet 11](sheet_11.qmd)
+- [Sheet 11 Solutions](sheet_11_solutions.qmd)
+- [Sheet 12](sheet_12.qmd)
+- [Sheet 12 Solutions](sheet_12_solutions.qmd)
+- [Sheet 13](sheet_13.qmd)
+- [Sheet 13 Solutions](sheet_13_solutions.qmd)
 
 Explore each sheet to read the tasks and run the embedded Python examples directly in the browser.

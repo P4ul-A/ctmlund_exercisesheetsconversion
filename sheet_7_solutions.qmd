@@ -1,0 +1,89 @@
+---
+title: "Sheet Seven Solutions"
+format: html
+filters:
+  - pyodide
+---
+
+### Task 1
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+rng = np.random.default_rng(0)
+n = 5
+
+A = rng.standard_normal((n, n))
+A = 0.5 * (A + A.T)
+
+eigvals, eigvecs = np.linalg.eigh(A)
+
+max_imag = np.max(np.abs(eigvals.imag))
+orthogonality = eigvecs.T @ eigvecs
+identity = np.eye(n)
+max_off = np.max(np.abs(orthogonality - identity))
+
+print("Max imaginary part:", max_imag)
+print("Max off-diagonal:", max_off)
+```
+
+### Task 2
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+def build_matrix_diag(u):
+    u = np.array(u, dtype=float)
+    n = len(u)
+    main = -2.0 * u
+    lower = u[:-1]
+    upper = u[1:]
+    return np.diag(main) + np.diag(lower, k=-1) + np.diag(upper, k=1)
+
+def build_matrix_loops(u):
+    u = np.array(u, dtype=float)
+    n = len(u)
+    A = np.zeros((n, n))
+
+    for i in range(n):
+        A[i, i] = -2.0 * u[i]
+    for i in range(n - 1):
+        A[i + 1, i] = u[i]
+        A[i, i + 1] = u[i + 1]
+    return A
+
+u = np.array([1.0, 2.0, 3.0, 4.0])
+print(build_matrix_diag(u))
+print(build_matrix_loops(u))
+```
+
+### Task 3
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+def build_matrix_diag(u):
+    u = np.array(u, dtype=float)
+    n = len(u)
+    main = -2.0 * u
+    lower = u[:-1]
+    upper = u[1:]
+    return np.diag(main) + np.diag(lower, k=-1) + np.diag(upper, k=1)
+
+u = np.linspace(0.0, 2.0 * np.pi, 500)
+D = build_matrix_diag(u)
+
+S = np.sin(D)
+ones = np.ones(len(u))
+y = S @ ones
+
+plt.plot(u, y)
+plt.xlabel("u")
+plt.ylabel("sin(D) * 1")
+plt.title("Result of sin(D) times ones vector")
+plt.show()
+```

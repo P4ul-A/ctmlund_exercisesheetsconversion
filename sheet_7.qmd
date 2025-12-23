@@ -1,0 +1,124 @@
+---
+title: "Sheet Seven"
+format: html
+filters:
+  - pyodide
+---
+
+NUMA01: Computational Programming with Python  
+Claus Fuhrer, Malin Christersson, Robert Klofkorn  
+
+This assignment has 3 tasks.
+
+## Exercises
+
+For these tasks you need knowledge about vectors and arrays, Chapter 4/5 in the
+course book.
+
+### Task 1
+
+A central theorem in linear algebra says that the eigenvalues of real symmetric
+matrices are real and that their eigenvectors are orthogonal. Try to verify this
+theorem by using square random matrices of dimensions not less than 5.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+rng = np.random.default_rng(0)
+
+def check_symmetric_eigs(n):
+    A = rng.standard_normal((n, n))
+    A = 0.5 * (A + A.T)
+
+    eigvals, eigvecs = np.linalg.eig(A)
+
+    # TODO: check that eigvals are real and eigvecs are orthogonal.
+    return eigvals, eigvecs
+
+vals, vecs = check_symmetric_eigs(5)
+print("Eigenvalues:", vals)
+```
+
+### Task 2
+
+Given a vector $u \in \mathbb{R}^n$. Construct a $n \times n$ matrix $A$ with the
+properties
+
+$$
+A_{i,i} = -2 u_i,\quad i = 1, \dots, n,
+$$
+
+$$
+A_{i+1,i} = u_i,\quad i = 1, \dots, n-1,
+$$
+
+$$
+A_{i,i+1} = u_{i+1},\quad i = 1, \dots, n-1,
+$$
+
+and all other elements being zero.
+
+Do this task by using the NumPy command `diag` and alternatively by using
+for-loops. Write a function that takes a vector and returns such a matrix.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+def build_matrix_diag(u):
+    u = np.array(u, dtype=float)
+    n = len(u)
+
+    # TODO: use np.diag to build the matrix.
+    return np.zeros((n, n))
+
+def build_matrix_loops(u):
+    u = np.array(u, dtype=float)
+    n = len(u)
+    A = np.zeros((n, n))
+
+    # TODO: fill in the diagonal, subdiagonal, and superdiagonal with for-loops.
+    return A
+
+u = np.array([1.0, 2.0, 3.0, 4.0])
+print(build_matrix_diag(u))
+print(build_matrix_loops(u))
+```
+
+### Task 3
+
+Call the function you created in the last task with
+
+```
+u = linspace(0, 2 * pi, 500)
+```
+
+as input to get a matrix $D$. Compute the matrix $\sin(D)$. Multiply this matrix
+with the one-vector (a vector filled with 1's) and plot the result versus $u$.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+def build_matrix_diag(u):
+    u = np.array(u, dtype=float)
+    n = len(u)
+
+    # TODO: use np.diag to build the matrix.
+    return np.zeros((n, n))
+
+u = np.linspace(0.0, 2.0 * np.pi, 500)
+D = build_matrix_diag(u)
+
+# TODO: compute the matrix sin(D) and multiply by a ones vector.
+ones = np.ones_like(u)
+y = None
+
+plt.plot(u, y)
+plt.xlabel("u")
+plt.ylabel("sin(D) * 1")
+plt.title("Result of sin(D) times ones vector")
+plt.show()
+```

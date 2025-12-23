@@ -1,0 +1,149 @@
+---
+title: "Sheet Five Solutions"
+format: html
+filters:
+  - pyodide
+---
+
+### Task 1
+
+```{pyodide-python}
+#| read-only: false
+def poly_cubic(x, a, b, c, d):
+    """Evaluate p(x) = a*x**3 + b*x**2 + c*x + d."""
+    return a * x**3 + b * x**2 + c * x + d
+
+print(poly_cubic(2.0, 1.0, -2.0, 0.5, 3.0))
+```
+
+### Task 2
+
+```{pyodide-python}
+#| read-only: false
+def poly_cubic_list(x, coeffs):
+    """Evaluate p(x) with coeffs = [a, b, c, d]."""
+    a = coeffs[0]
+    b = coeffs[1]
+    c = coeffs[2]
+    d = coeffs[3]
+    return a * x**3 + b * x**2 + c * x + d
+
+coeffs = [1.0, -2.0, 0.5, 3.0]
+print(poly_cubic_list(2.0, coeffs))
+```
+
+### Task 3
+
+```{pyodide-python}
+#| read-only: false
+def poly_cubic(x, a, b, c, d):
+    return a * x**3 + b * x**2 + c * x + d
+
+coeffs = [1.0, -2.0, 0.5, 3.0]
+x_val = 2.0
+
+# Use unpacking so the list can be passed as separate arguments.
+value = poly_cubic(x_val, *coeffs)
+print(value)
+```
+
+### Task 4
+
+```{pyodide-python}
+#| read-only: false
+def poly_general(x, coeffs):
+    """Evaluate a polynomial using Horner's method."""
+    result = 0.0
+    for coeff in coeffs:
+        result = result * x + coeff
+    return result
+
+coeffs = [1.0, -2.0, 0.5, 3.0]
+print(poly_general(2.0, coeffs))
+```
+
+### Task 5
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+from scipy.integrate import quad
+
+def integrand(x, omega):
+    return np.sin(omega * x)
+
+omega = 2 * np.pi
+result, error = quad(lambda x: integrand(x, omega), 0.0, 0.5 * np.pi)
+
+print("Integral:", result)
+print("Estimated error:", error)
+```
+
+### Task 6
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import quad
+
+def integrand(x, omega):
+    return np.sin(omega * x)
+
+omegas = np.linspace(0.0, 2 * np.pi, 1000)
+values = []
+
+for omega in omegas:
+    value, _ = quad(lambda x: integrand(x, omega), 0.0, 0.5 * np.pi)
+    values.append(value)
+
+plt.plot(omegas, values)
+plt.xlabel("omega")
+plt.ylabel("Integral value")
+plt.title("Integral of sin(omega x) from 0 to pi/2")
+plt.show()
+```
+
+### Task 7
+
+```{pyodide-python}
+#| read-only: false
+from scipy.optimize import fsolve
+
+def poly_general(x, coeffs):
+    result = 0.0
+    for coeff in coeffs:
+        result = result * x + coeff
+    return result
+
+coeffs = [1.0, 1.0, -3.0]
+x0 = 1.0
+
+root = fsolve(lambda x: poly_general(x, coeffs), x0)
+print("Positive root:", root[0])
+```
+
+### Task 8
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import fsolve
+
+def poly_quadratic(x, a):
+    return a * x**2 + x - 3
+
+a_vals = np.linspace(1.0, 5.0, 50)
+roots = []
+
+for a in a_vals:
+    root = fsolve(lambda x: poly_quadratic(x, a), x0=1.0)
+    roots.append(root[0])
+
+plt.plot(a_vals, roots, marker="o")
+plt.xlabel("a")
+plt.ylabel("Positive root")
+plt.title("Positive roots of a x^2 + x - 3")
+plt.show()
+```

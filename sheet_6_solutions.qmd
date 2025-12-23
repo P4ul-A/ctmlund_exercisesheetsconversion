@@ -1,0 +1,134 @@
+---
+title: "Sheet Six Solutions"
+format: html
+filters:
+  - pyodide
+---
+
+### Task 3
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+def symmetry_type(A, tol=1e-12):
+    """Return 1 if symmetric, -1 if skew-symmetric, else 0."""
+    A = np.array(A, dtype=float)
+
+    if np.allclose(A, A.T, atol=tol):
+        return 1
+    if np.allclose(A, -A.T, atol=tol):
+        return -1
+    return 0
+
+A1 = np.array([[1.0, 2.0], [2.0, 1.0]])
+A2 = np.array([[0.0, 1.0], [-1.0, 0.0]])
+A3 = np.array([[1.0, 2.0], [3.0, 4.0]])
+
+print("A1:", symmetry_type(A1))
+print("A2:", symmetry_type(A2))
+print("A3:", symmetry_type(A3))
+```
+
+### Task 4
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+def are_orthogonal(u, v, tol=1e-12):
+    """Return True if u and v are orthogonal."""
+    u = np.array(u, dtype=float)
+    v = np.array(v, dtype=float)
+    return abs(np.dot(u, v)) < tol
+
+u = np.array([1.0, 2.0, -1.0])
+v = np.array([2.0, 0.0, 2.0])
+print("Orthogonal?", are_orthogonal(u, v))
+```
+
+### Task 5
+
+```{pyodide-python}
+#| read-only: false
+import math
+import numpy as np
+from numpy.linalg import norm as npnorm
+
+def normalize_manual(x):
+    """Normalize a vector using a manually computed 2-norm."""
+    x = np.array(x, dtype=float)
+    s = 0.0
+    for value in x:
+        s += value * value
+    length = math.sqrt(s)
+    if length == 0.0:
+        raise ValueError("Zero vector cannot be normalized.")
+    return x / length
+
+def normalize_numpy(x):
+    """Normalize a vector using numpy.linalg.norm."""
+    x = np.array(x, dtype=float)
+    length = npnorm(x)
+    if length == 0.0:
+        raise ValueError("Zero vector cannot be normalized.")
+    return x / length
+
+vec = np.array([3.0, 4.0])
+print("Manual:", normalize_manual(vec))
+print("NumPy:", normalize_numpy(vec))
+```
+
+### Task 6
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+def rotation_matrix(alpha):
+    return np.array([
+        [np.cos(alpha), np.sin(alpha)],
+        [-np.sin(alpha), np.cos(alpha)],
+    ])
+
+angles = [0.0, np.pi / 6, np.pi / 4, np.pi / 3]
+
+for alpha in angles:
+    R = rotation_matrix(alpha)
+    R_inv = np.linalg.inv(R)
+    R_T = R.T
+    print("alpha:", alpha, "inverse equals transpose?", np.allclose(R_inv, R_T))
+```
+
+### Task 7
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+n = 20
+diag = 4.0 * np.ones(n)
+off = 1.0 * np.ones(n - 1)
+
+A = np.diag(diag) + np.diag(off, k=1) + np.diag(off, k=-1)
+eigvals = np.linalg.eigvals(A)
+
+print("Eigenvalues:", eigvals)
+```
+
+### Task 8
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+n = 20
+diag = 4.0 * np.ones(n)
+sub = -1.0 * np.ones(n - 1)
+sup = 1.0 * np.ones(n - 1)
+
+A = np.diag(diag) + np.diag(sub, k=-1) + np.diag(sup, k=1)
+eigvals = np.linalg.eigvals(A)
+
+print("Eigenvalues (modified):", eigvals)
+```

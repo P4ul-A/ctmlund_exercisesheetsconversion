@@ -67,7 +67,7 @@
     "href": "index.html#exercise-sheets",
     "title": "ExerciseTest",
     "section": "Exercise Sheets",
-    "text": "Exercise Sheets\n\nSheet 2\nSheet 3\nSheet 4\n\nExplore each sheet to read the tasks and run the embedded Python examples directly in the browser."
+    "text": "Exercise Sheets\n\nSheet 2\nSheet 2 Solutions\nSheet 3\nSheet 3 Solutions\nSheet 4\nSheet 4 Solutions\nSheet 5\nSheet 5 Solutions\nSheet 6\nSheet 6 Solutions\nSheet 7\nSheet 7 Solutions\nSheet 8\nSheet 8 Solutions\nSheet 9\nSheet 9 Solutions\nSheet 11\nSheet 11 Solutions\nSheet 12\nSheet 12 Solutions\nSheet 13\nSheet 13 Solutions\n\nExplore each sheet to read the tasks and run the embedded Python examples directly in the browser."
   },
   {
     "objectID": "sheet_4.html",
@@ -96,5 +96,89 @@
     "title": "About",
     "section": "",
     "text": "This is just a test :)"
+  },
+  {
+    "objectID": "sheet_5.html",
+    "href": "sheet_5.html",
+    "title": "Sheet Five",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klofkorn\nThis assignment has 8 tasks."
+  },
+  {
+    "objectID": "sheet_5.html#warming-up-exercises",
+    "href": "sheet_5.html#warming-up-exercises",
+    "title": "Sheet Five",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\nConsult the lecture notes for solutions to the warming-up exercises.\n\nTask 1\nWrite a function that implements the polynomial\n\\[\np(x) = a x^3 + b x^2 + c x + d.\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\nRewrite your polynomial from the previous task such that the coefficients are represented by a list (of length 4).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 3\nDiscuss with your colleagues how to use packing/unpacking techniques to use a list as input for the polynomial from the first task.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nRewrite your polynomial such that arbitrary polynomials can be represented, i.e. lists of coefficients of arbitrary length.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_5.html#exercises",
+    "href": "sheet_5.html#exercises",
+    "title": "Sheet Five",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 5 - Integrals\nCompute approximately the integral\n\\[\n\\int_0^{\\pi/2} \\sin(\\omega x)\\,dx\n\\]\nfor \\(\\omega = 2\\pi\\).\nFor this end run at the beginning of your program the import statement\nfrom scipy.integrate import quad\nThe method to integrate a function \\(f\\) over an interval \\([a, b]\\) is quad(f, a, b). It returns a tuple with the approximated solution and the estimated error.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6 - Integrals and plots\nCompute the integral above for 1000 equidistant values of \\(\\omega\\) in the interval \\([0, 2\\pi]\\) and plot the results versus \\(\\omega\\). Label the axes and add a title to the plot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7 - Zeros of a function\nUse scipy.optimize.fsolve to compute the positive zero of the polynomial \\(p(x) = x^2 + x - 3\\). Use your implemented polynomial with the appropriate coefficients.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8 - Zeros of a parameter dependent function\nPlot the positive zeros of the polynomials\n\\[\np(x) = a x^2 + x - 3\n\\]\nfor \\(a \\in [1, 5]\\) versus \\(a\\). Do the zeros depend linearly on \\(a\\)?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_6.html",
+    "href": "sheet_6.html",
+    "title": "Sheet Six",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klofkorn\nThis exercise trains knowledge about vectors and arrays, i.e. the basics from Chapter 4 and 5 in the course book.\nThis assignment has 8 tasks."
+  },
+  {
+    "objectID": "sheet_6.html#warming-up-exercises",
+    "href": "sheet_6.html#warming-up-exercises",
+    "title": "Sheet Six",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nRead Chapter 4 of the course book.\n\n\nTask 2\nImplement the following code.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_6.html#exercises",
+    "href": "sheet_6.html#exercises",
+    "title": "Sheet Six",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 3\nConsider a square matrix \\(A\\) (number of rows is the same as columns).\n\\(A\\) is symmetric if and only if \\(A = A^T\\), i.e. if \\(a_{ij} = a_{ji}\\) for indices \\(i, j\\). Accordingly, \\(A\\) is skew-symmetric if and only if \\(-A = A^T\\).\nWrite a function that takes a matrix as parameter. It should check if this matrix is symmetric. The function should return 1 for a symmetric matrix, -1 for a skew-symmetric matrix and 0 otherwise. Test your function.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nWrite a function that takes two vectors as parameters. It should check if these vectors are orthogonal. If they are orthogonal it should return True, otherwise False.\nDo not forget to provide your function with a docstring.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\nWrite a function that takes a vector as parameter and returns the corresponding normalized vector, i.e. \\(x / \\lVert x \\rVert\\).\nWrite two variants of this program: one in which you compute the norm (use the 2-norm) of the vector by yourself and another which uses the function norm from the module numpy.linalg.\nRecall that to be able to use NumPy’s norm function you must have the line from numpy.linalg import norm at the start of your program. Note that you cannot then call your own function norm too. If this is inconvenient, use from numpy.linalg import norm as npnorm to give NumPy’s norm function a new name.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\nShow experimentally that the inverse of a rotation matrix is its transpose.\nHint: \\(B\\) is the inverse of \\(A\\) if \\(AB = BA = I\\), the identity matrix. In 2D, a rotation matrix has the form\n\\[\n\\begin{pmatrix}\n\\cos \\alpha & \\sin \\alpha \\\\\n-\\sin \\alpha & \\cos \\alpha\n\\end{pmatrix}\n\\]\nwhere \\(\\alpha\\) can be any angle.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nExtra Task 7 (in case you want an extra challenge)\n(If you do not know eigenvalues yet, skip this task for now.) Construct a \\(20 \\times 20\\) matrix with the value 4 on its diagonal and the value 1 on its sub- and super-diagonal. The rest of the matrix is zero. Compute its eigenvalues. (Use the function eig from the module numpy.linalg.) You might also want to check the function diag for this task.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nExtra Task 8 (in case you want an extra challenge)\n(If you do not know eigenvalues yet, skip this task for now.) Change the matrix in the above task in such a way that all the elements of its subdiagonal instead have the value \\(-1\\). How are the eigenvalues affected by this change?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_8.html",
+    "href": "sheet_8.html",
+    "title": "Sheet Eight",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klofkorn\nIn this exercise we define some classes to start to become familiar with the principle syntax and methods.\nThis assignment has 10 tasks."
+  },
+  {
+    "objectID": "sheet_8.html#warming-up-exercises",
+    "href": "sheet_8.html#warming-up-exercises",
+    "title": "Sheet Eight",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nRead Chapter 8 of the course book.\n\n\nTask 2\nObtain the RationalNumber example for the lecture and add a method for subtraction. Use the operator __sub__.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_8.html#exercises",
+    "href": "sheet_8.html#exercises",
+    "title": "Sheet Eight",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 3\nDefine a class ComplexNumber and write an appropriate __init__ method.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nWrite a method which returns the complex number’s real part, and one which returns the imaginary part.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\nWrite methods is_imaginary and is_real. They should return Boolean answers.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\nWrite a representation method which represents a complex number in the mathematical notation \\(a + i b\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\nWrite a method which returns the complex number’s argument and absolute value.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\nWrite a method which checks if two complex numbers are equal.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 9\nDefine methods for operations such as addition, subtraction, multiplication, division and power of complex numbers. These methods should work also for operations between complex numbers, integers and real numbers (floats). Where appropriate, make sure that the result is independent of the order of the arguments.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 10\nTest your implementation by comparing to the Python native complex implementation.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_7.html",
+    "href": "sheet_7.html",
+    "title": "Sheet Seven",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nClaus Fuhrer, Malin Christersson, Robert Klofkorn\nThis assignment has 3 tasks."
+  },
+  {
+    "objectID": "sheet_7.html#exercises",
+    "href": "sheet_7.html#exercises",
+    "title": "Sheet Seven",
+    "section": "Exercises",
+    "text": "Exercises\nFor these tasks you need knowledge about vectors and arrays, Chapter 4/5 in the course book.\n\nTask 1\nA central theorem in linear algebra says that the eigenvalues of real symmetric matrices are real and that their eigenvectors are orthogonal. Try to verify this theorem by using square random matrices of dimensions not less than 5.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\nGiven a vector \\(u \\in \\mathbb{R}^n\\). Construct a \\(n \\times n\\) matrix \\(A\\) with the properties\n\\[\nA_{i,i} = -2 u_i,\\quad i = 1, \\dots, n,\n\\]\n\\[\nA_{i+1,i} = u_i,\\quad i = 1, \\dots, n-1,\n\\]\n\\[\nA_{i,i+1} = u_{i+1},\\quad i = 1, \\dots, n-1,\n\\]\nand all other elements being zero.\nDo this task by using the NumPy command diag and alternatively by using for-loops. Write a function that takes a vector and returns such a matrix.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 3\nCall the function you created in the last task with\nu = linspace(0, 2 * pi, 500)\nas input to get a matrix \\(D\\). Compute the matrix \\(\\sin(D)\\). Multiply this matrix with the one-vector (a vector filled with 1’s) and plot the result versus \\(u\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_2_solutions.html",
+    "href": "sheet_2_solutions.html",
+    "title": "Sheet Two Solutions",
+    "section": "",
+    "text": "Task 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 9\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 10\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 11\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 12\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 14.1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 14.2\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   }
 ]

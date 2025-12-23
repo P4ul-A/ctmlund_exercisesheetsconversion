@@ -1,0 +1,139 @@
+---
+title: "Sheet Eleven"
+format: html
+filters:
+  - pyodide
+---
+
+NUMA01: Computational Programming with Python  
+Malin Christersson, Robert Klofkorn  
+
+The purpose of this training exercise is to work with object oriented techniques in plotting.  
+This assignment has 11 tasks.
+
+## Warming-up Exercises
+
+### Task 1
+
+Obtain the mandelbrot function code from the course book Chapter 6 - Plotting
+and create the same plot as in the book. While there glance through the chapter.
+
+### Task 2
+
+Change the color map for the plot. Potential color maps can be obtained by
+
+```
+from matplotlib import colormaps
+print(colormaps)
+```
+
+---
+
+## Exercises
+
+We imagine that we are in a teaching situation and want to demonstrate properties
+of a polynomial.
+
+### Task 3
+
+Choose a polynomial of degree 3 and plot it together with its first derivative.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# TODO: choose a cubic polynomial and its derivative.
+def p(x):
+    pass
+
+def dp(x):
+    pass
+
+x = np.linspace(-3.0, 3.0, 400)
+y = p(x)
+yp = dp(x)
+
+plt.plot(x, y, label="p(x)")
+plt.plot(x, yp, label="p'(x)")
+plt.legend()
+plt.show()
+```
+
+### Task 4
+
+Plot a tangent segment to this curve at its inflection point(s).
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# TODO: reuse the polynomial from Task 3 and add a tangent at the inflection point.
+```
+
+### Task 5
+
+Do the same for its extremal values.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# TODO: add tangents at the extrema of the polynomial.
+```
+
+### Task 6
+
+Make the tangents a small, black, dotted line.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: set the tangent line style to dotted black.
+```
+
+### Task 7
+
+Make the polynomial curve thicker than its derivative.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: adjust line widths.
+```
+
+### Task 8
+
+Add annotations.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: add annotations to highlight key points.
+```
+
+### Task 9
+
+Put only the x and y coordinate of these points as tick labels.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: set custom tick labels.
+```
+
+### Task 10
+
+Give the figure a title.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: add a title.
+```
+
+### Task 11
+
+Save it as a png file.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: save the figure as a PNG file.
+```

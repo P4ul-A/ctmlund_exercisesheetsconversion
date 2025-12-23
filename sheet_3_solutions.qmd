@@ -1,0 +1,116 @@
+---
+title: "Sheet Three Solutions"
+format: html
+filters:
+  - pyodide
+---
+
+### Task 4
+
+```{pyodide-python}
+#| read-only: false
+distance = [
+    [0, 20, 30, 40],
+    [20, 0, 50, 60],
+    [30, 50, 0, 70],
+    [40, 60, 70, 0],
+]
+
+# Build reddistance using nested loops.
+reddistance_loops = []
+for i in range(1, len(distance)):
+    row = []
+    for j in range(i):
+        row.append(distance[i][j])
+    reddistance_loops.append(row)
+
+# Build reddistance using slicing (still with a simple loop).
+reddistance_comp = []
+for i in range(1, len(distance)):
+    reddistance_comp.append(distance[i][:i])
+
+print("distance:", distance)
+print("reddistance_loops:", reddistance_loops)
+print("reddistance_comp:", reddistance_comp)
+```
+
+### Task 5
+
+```{pyodide-python}
+#| read-only: false
+def symmetric_difference(A, B):
+    """Return the symmetric difference of A and B."""
+    result = set()
+
+    for item in A:
+        if item not in B:
+            result.add(item)
+
+    for item in B:
+        if item not in A:
+            result.add(item)
+
+    return result
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5}
+
+print("Custom:", symmetric_difference(A, B))
+print("Built-in:", A.symmetric_difference(B))
+```
+
+### Task 7
+
+```{pyodide-python}
+#| read-only: false
+empty = set()
+
+sets_to_test = [
+    set(),
+    {1},
+    {1, 2, 3},
+    {"a", "b"},
+]
+
+for idx, current in enumerate(sets_to_test, start=1):
+    result = empty.issubset(current)
+    print(f"Test {idx}: {result}")
+```
+
+### Task 8
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+def bisection(f, a, b, tol=1e-6, max_iter=200):
+    """Bisection method for a sign-changing interval [a, b]."""
+    fa = f(a)
+    fb = f(b)
+    if fa * fb > 0:
+        raise ValueError("f(a) and f(b) must have opposite signs.")
+
+    for _ in range(max_iter):
+        mid = 0.5 * (a + b)
+        fm = f(mid)
+        if abs(b - a) < tol:
+            return mid
+        if fa * fm <= 0:
+            b, fb = mid, fm
+        else:
+            a, fa = mid, fm
+    return mid
+
+def f_poly(x):
+    return 3 * x**2 - 5
+
+root1 = bisection(math.atan, -0.5, 0.6, tol=1e-8)
+root2 = bisection(math.atan, -1.5, -0.4, tol=1e-8)
+root3 = bisection(f_poly, -0.5, 0.6, tol=1e-8)
+root4 = bisection(f_poly, -1.5, -0.4, tol=1e-8)
+
+print("atan root in [-0.5, 0.6]:", root1)
+print("atan root in [-1.5, -0.4]:", root2)
+print("3x^2 - 5 in [-0.5, 0.6]:", root3)
+print("3x^2 - 5 in [-1.5, -0.4]:", root4)
+```

@@ -1,0 +1,78 @@
+---
+title: "Sheet Twelve"
+format: html
+filters:
+  - pyodide
+---
+
+NUMA01: Computational Programming with Python  
+Malin Christersson, Robert Klofkorn  
+
+This exercise demonstrates the use of matplotlib's GUI and continues Training Exercise 11.  
+This assignment has 4 tasks.
+
+## Warming-up Exercises
+
+### Task 1
+
+Consult the matplotlib documentation: <https://matplotlib.org/stable/gallery/>.  
+Obtain the code for the Axes Demo and run it. While there also look at other
+examples you find interesting.
+
+### Task 2
+
+Obtain the code for one of the 3D plotting examples from the book Chapter 6 -
+Plotting and run it. Compare with the 3D plotting examples that you find on the
+matplotlib documentation page.
+
+---
+
+## Exercises
+
+### Task 3
+
+Consider the function $\sin(\omega x)$ and its second degree Taylor polynomial
+when expanded about a given point $x_0$. The aim of this task is to study the
+change of the Taylor polynomials in dependence of $x_0$ and $\omega$. Modify
+your code of Assignment 11, so that it plots the function and its Taylor polynomial
+when $x_0$ and $\omega$ are given. Plot these two functions over the interval
+$[0, 2\pi]$ in the way you plotted them in Training Assignment 11, Task 2 and 3.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+def taylor_sin(x, x0, omega):
+    # TODO: compute second degree Taylor polynomial of sin(omega x) about x0.
+    pass
+
+x0 = 0.0
+omega = 1.0
+
+x = np.linspace(0.0, 2.0 * np.pi, 400)
+y = np.sin(omega * x)
+yt = taylor_sin(x, x0, omega)
+
+plt.plot(x, y, label="sin(omega x)")
+plt.plot(x, yt, label="Taylor polynomial")
+plt.legend()
+plt.show()
+```
+
+### Task 4
+
+Design and program a GUI which serves as a user friendly way to input
+interactively the two parameters $x_0$ and $\omega$ to fast and easily vary the
+curves to demonstrate their dependency on these parameters. Equip the GUI with
+all necessary text to make your program a good demonstration tool for Taylor's
+theorem.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.widgets import Slider
+
+# TODO: build a GUI with sliders for x0 and omega and update the curves.
+```

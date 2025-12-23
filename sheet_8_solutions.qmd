@@ -1,0 +1,237 @@
+---
+title: "Sheet Eight Solutions"
+format: html
+filters:
+  - pyodide
+---
+
+### Task 2
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+class RationalNumber:
+    def __init__(self, numerator, denominator=1):
+        if denominator == 0:
+            raise ValueError("Denominator cannot be zero.")
+        g = math.gcd(int(numerator), int(denominator))
+        numerator = numerator // g
+        denominator = denominator // g
+        if denominator < 0:
+            numerator = -numerator
+            denominator = -denominator
+        self.numerator = numerator
+        self.denominator = denominator
+
+    def __sub__(self, other):
+        if isinstance(other, RationalNumber):
+            n = self.numerator * other.denominator - other.numerator * self.denominator
+            d = self.denominator * other.denominator
+            return RationalNumber(n, d)
+        if isinstance(other, int):
+            n = self.numerator - other * self.denominator
+            d = self.denominator
+            return RationalNumber(n, d)
+        return NotImplemented
+
+    def __repr__(self):
+        return f"{self.numerator}/{self.denominator}"
+
+a = RationalNumber(3, 4)
+b = RationalNumber(1, 2)
+print("a - b =", a - b)
+```
+
+### Task 3
+
+```{pyodide-python}
+#| read-only: false
+class ComplexNumber:
+    def __init__(self, real=0.0, imag=0.0):
+        self.real = real
+        self.imag = imag
+```
+
+### Task 4
+
+```{pyodide-python}
+#| read-only: false
+class ComplexNumber:
+    def __init__(self, real=0.0, imag=0.0):
+        self.real = real
+        self.imag = imag
+
+    def real_part(self):
+        return self.real
+
+    def imag_part(self):
+        return self.imag
+```
+
+### Task 5
+
+```{pyodide-python}
+#| read-only: false
+class ComplexNumber:
+    def __init__(self, real=0.0, imag=0.0):
+        self.real = real
+        self.imag = imag
+
+    def is_real(self):
+        return self.imag == 0.0
+
+    def is_imaginary(self):
+        return self.real == 0.0
+```
+
+### Task 6
+
+```{pyodide-python}
+#| read-only: false
+class ComplexNumber:
+    def __init__(self, real=0.0, imag=0.0):
+        self.real = real
+        self.imag = imag
+
+    def __repr__(self):
+        return f"{self.real} + i {self.imag}"
+```
+
+### Task 7
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+class ComplexNumber:
+    def __init__(self, real=0.0, imag=0.0):
+        self.real = real
+        self.imag = imag
+
+    def argument(self):
+        return math.atan2(self.imag, self.real)
+
+    def modulus(self):
+        return math.sqrt(self.real**2 + self.imag**2)
+```
+
+### Task 8
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+class ComplexNumber:
+    def __init__(self, real=0.0, imag=0.0):
+        self.real = real
+        self.imag = imag
+
+    def __eq__(self, other):
+        if not isinstance(other, ComplexNumber):
+            return False
+        return math.isclose(self.real, other.real) and math.isclose(self.imag, other.imag)
+```
+
+### Task 9
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+class ComplexNumber:
+    def __init__(self, real=0.0, imag=0.0):
+        self.real = real
+        self.imag = imag
+
+    def _as_complex(self, other):
+        if isinstance(other, ComplexNumber):
+            return other
+        if isinstance(other, (int, float)):
+            return ComplexNumber(float(other), 0.0)
+        return NotImplemented
+
+    def __add__(self, other):
+        other = self._as_complex(other)
+        if other is NotImplemented:
+            return NotImplemented
+        return ComplexNumber(self.real + other.real, self.imag + other.imag)
+
+    def __radd__(self, other):
+        return self.__add__(other)
+
+    def __sub__(self, other):
+        other = self._as_complex(other)
+        if other is NotImplemented:
+            return NotImplemented
+        return ComplexNumber(self.real - other.real, self.imag - other.imag)
+
+    def __rsub__(self, other):
+        other = self._as_complex(other)
+        if other is NotImplemented:
+            return NotImplemented
+        return ComplexNumber(other.real - self.real, other.imag - self.imag)
+
+    def __mul__(self, other):
+        other = self._as_complex(other)
+        if other is NotImplemented:
+            return NotImplemented
+        real = self.real * other.real - self.imag * other.imag
+        imag = self.real * other.imag + self.imag * other.real
+        return ComplexNumber(real, imag)
+
+    def __rmul__(self, other):
+        return self.__mul__(other)
+
+    def __truediv__(self, other):
+        other = self._as_complex(other)
+        if other is NotImplemented:
+            return NotImplemented
+        denom = other.real**2 + other.imag**2
+        if denom == 0.0:
+            raise ZeroDivisionError("Division by zero.")
+        real = (self.real * other.real + self.imag * other.imag) / denom
+        imag = (self.imag * other.real - self.real * other.imag) / denom
+        return ComplexNumber(real, imag)
+
+    def __rtruediv__(self, other):
+        other = self._as_complex(other)
+        if other is NotImplemented:
+            return NotImplemented
+        return other.__truediv__(self)
+
+    def __pow__(self, power):
+        if not isinstance(power, int):
+            raise TypeError("Only integer powers are supported.")
+        result = ComplexNumber(1.0, 0.0)
+        base = ComplexNumber(self.real, self.imag)
+        for _ in range(abs(power)):
+            result = result * base
+        if power < 0:
+            result = ComplexNumber(1.0, 0.0) / result
+        return result
+```
+
+### Task 10
+
+```{pyodide-python}
+#| read-only: false
+# Use the class from Task 9.
+a = ComplexNumber(2.0, 1.0)
+b = ComplexNumber(-1.0, 3.0)
+
+print("a + b =", a + b)
+print("a - b =", a - b)
+print("a * b =", a * b)
+print("a / b =", a / b)
+print("a ** 2 =", a ** 2)
+
+# Compare with Python's built-in complex type.
+ca = complex(2.0, 1.0)
+cb = complex(-1.0, 3.0)
+print("built-in a + b =", ca + cb)
+print("built-in a - b =", ca - cb)
+print("built-in a * b =", ca * cb)
+print("built-in a / b =", ca / cb)
+print("built-in a ** 2 =", ca ** 2)
+```

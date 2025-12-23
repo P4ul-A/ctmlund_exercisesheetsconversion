@@ -1,0 +1,114 @@
+---
+title: "Sheet Nine Solutions"
+format: html
+filters:
+  - pyodide
+---
+
+### Task 1
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+from abc import ABC, abstractmethod
+
+class PolyGon(ABC):
+    def __init__(self, corners):
+        # Store corner points as NumPy arrays.
+        self.corners = []
+        for pt in corners:
+            self.corners.append(np.array(pt, dtype=float))
+
+        # Build edges as pairs of consecutive points.
+        self.edges = []
+        n = len(self.corners)
+        for i in range(n):
+            p1 = self.corners[i]
+            p2 = self.corners[(i + 1) % n]
+            self.edges.append((p1, p2))
+
+    @abstractmethod
+    def plot(self):
+        # Plot each edge as a line segment.
+        for p1, p2 in self.edges:
+            xs = [p1[0], p2[0]]
+            ys = [p1[1], p2[1]]
+            plt.plot(xs, ys, color="black")
+```
+
+### Task 2
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+class Rectangle(PolyGon):
+    def __init__(self, corners):
+        super().__init__(corners)
+
+    def area(self):
+        # Use two adjacent edges to get the area.
+        if len(self.corners) < 4:
+            return 0.0
+        edge1 = self.corners[1] - self.corners[0]
+        edge2 = self.corners[2] - self.corners[1]
+        length1 = np.linalg.norm(edge1)
+        length2 = np.linalg.norm(edge2)
+        return length1 * length2
+```
+
+### Task 3
+
+```{pyodide-python}
+#| read-only: false
+class SpecialRectangle(Rectangle):
+    def __init__(self, x_min, x_max, y_min, y_max):
+        self.x_min = float(x_min)
+        self.x_max = float(x_max)
+        self.y_min = float(y_min)
+        self.y_max = float(y_max)
+
+        corners = [
+            [self.x_min, self.y_min],
+            [self.x_max, self.y_min],
+            [self.x_max, self.y_max],
+            [self.x_min, self.y_max],
+        ]
+        super().__init__(corners)
+```
+
+### Task 4
+
+```{pyodide-python}
+#| read-only: false
+class SpecialRectangle(Rectangle):
+    def __init__(self, x_min, x_max, y_min, y_max):
+        self.x_min = float(x_min)
+        self.x_max = float(x_max)
+        self.y_min = float(y_min)
+        self.y_max = float(y_max)
+
+        corners = [
+            [self.x_min, self.y_min],
+            [self.x_max, self.y_min],
+            [self.x_max, self.y_max],
+            [self.x_min, self.y_max],
+        ]
+        super().__init__(corners)
+
+    def __contains__(self, other):
+        if not isinstance(other, SpecialRectangle):
+            return False
+        return (
+            other.x_min >= self.x_min
+            and other.x_max <= self.x_max
+            and other.y_min >= self.y_min
+            and other.y_max <= self.y_max
+        )
+
+# Example usage
+A = SpecialRectangle(0, 2, 0, 1)
+B = SpecialRectangle(0.5, 1.5, 0.2, 0.8)
+print("B in A?", B in A)
+```

@@ -1,0 +1,140 @@
+---
+title: "Sheet Thirteen Solutions"
+format: html
+filters:
+  - pyodide
+---
+
+### Task 1
+
+```{pyodide-python}
+#| read-only: false
+def crazzyPlus(a, b):
+    """
+    Crazy addition without carrying.
+    Each digit pair is added and the sums are concatenated.
+    """
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise ValueError("Inputs must be integers.")
+    if a < 0 or b < 0:
+        raise ValueError("Inputs must be non-negative.")
+
+    if a == 0 and b == 0:
+        return 0
+
+    parts = []
+    while a > 0 or b > 0:
+        da = a % 10
+        db = b % 10
+        parts.append(str(da + db))
+        a //= 10
+        b //= 10
+
+    # Reverse the parts to restore left-to-right order.
+    parts_rev = []
+    for i in range(len(parts) - 1, -1, -1):
+        parts_rev.append(parts[i])
+
+    result_str = "".join(parts_rev)
+    return int(result_str)
+
+print(crazzyPlus(58, 76))  # 1214
+```
+
+### Task 3
+
+```{pyodide-python}
+#| read-only: false
+import unittest
+
+class TestCrazzyPlus(unittest.TestCase):
+    def test_basic(self):
+        self.assertEqual(crazzyPlus(0, 0), 0)
+        self.assertEqual(crazzyPlus(12, 34), 46)
+        self.assertEqual(crazzyPlus(58, 76), 1214)
+
+    def test_invalid(self):
+        with self.assertRaises(ValueError):
+            crazzyPlus(-1, 2)
+        with self.assertRaises(ValueError):
+            crazzyPlus(1.5, 2)
+
+suite = unittest.TestLoader().loadTestsFromTestCase(TestCrazzyPlus)
+unittest.TextTestRunner().run(suite)
+```
+
+### Task 5
+
+```{pyodide-python}
+#| read-only: false
+def smallest_missing_positive(values):
+    """Return the smallest missing positive integer."""
+    present = set()
+    for v in values:
+        if isinstance(v, int) and v > 0:
+            present.add(v)
+
+    candidate = 1
+    while candidate in present:
+        candidate += 1
+    return candidate
+
+nums = [3, 4, 7, 1, 2, 9]
+print("Missing:", smallest_missing_positive(nums))
+```
+
+### Task 6
+
+```{pyodide-python}
+#| read-only: false
+def count_islands(grid):
+    """Count islands in a grid using 8-direction connectivity."""
+    if not grid:
+        return 0
+
+    rows = len(grid)
+    cols = len(grid[0])
+    visited = []
+    for _ in range(rows):
+        visited.append([False] * cols)
+
+    directions = [
+        (-1, -1), (-1, 0), (-1, 1),
+        (0, -1),          (0, 1),
+        (1, -1),  (1, 0), (1, 1),
+    ]
+
+    def dfs(r, c):
+        stack = [(r, c)]
+        visited[r][c] = True
+        while stack:
+            cr, cc = stack.pop()
+            for dr, dc in directions:
+                nr = cr + dr
+                nc = cc + dc
+                if 0 <= nr < rows and 0 <= nc < cols:
+                    if grid[nr][nc] == 1 and not visited[nr][nc]:
+                        visited[nr][nc] = True
+                        stack.append((nr, nc))
+
+    islands = 0
+    for r in range(rows):
+        for c in range(cols):
+            if grid[r][c] == 1 and not visited[r][c]:
+                islands += 1
+                dfs(r, c)
+    return islands
+
+example = [
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0, 0, 0, 1],
+    [0, 0, 1, 0, 0, 0, 1, 0],
+    [0, 1, 1, 1, 0, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 0],
+]
+
+print("Islands:", count_islands(example))
+```

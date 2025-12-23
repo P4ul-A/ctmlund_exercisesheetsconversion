@@ -1,0 +1,190 @@
+---
+title: "Sheet Eight"
+format: html
+filters:
+  - pyodide
+---
+
+NUMA01: Computational Programming with Python  
+Malin Christersson, Robert Klofkorn  
+
+In this exercise we define some classes to start to become familiar with the
+principle syntax and methods.  
+This assignment has 10 tasks.
+
+## Warming-up Exercises
+
+### Task 1
+
+Read Chapter 8 of the course book.
+
+### Task 2
+
+Obtain the `RationalNumber` example for the lecture and add a method for
+subtraction. Use the operator `__sub__`.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: paste the RationalNumber class from the lecture notes here.
+class RationalNumber:
+    def __init__(self, numerator, denominator=1):
+        # TODO: store numerator and denominator.
+        pass
+
+    def __sub__(self, other):
+        # TODO: implement subtraction for RationalNumber.
+        pass
+```
+
+---
+
+## Exercises
+
+### Task 3
+
+Define a class `ComplexNumber` and write an appropriate `__init__` method.
+
+```{pyodide-python}
+#| read-only: false
+class ComplexNumber:
+    def __init__(self, real=0.0, imag=0.0):
+        # TODO: store the real and imaginary parts.
+        pass
+```
+
+### Task 4
+
+Write a method which returns the complex number's real part, and one which
+returns the imaginary part.
+
+```{pyodide-python}
+#| read-only: false
+class ComplexNumber:
+    # TODO: add the __init__ method from Task 3.
+
+    def real_part(self):
+        """Return the real part."""
+        pass
+
+    def imag_part(self):
+        """Return the imaginary part."""
+        pass
+```
+
+### Task 5
+
+Write methods `is_imaginary` and `is_real`. They should return Boolean answers.
+
+```{pyodide-python}
+#| read-only: false
+class ComplexNumber:
+    # TODO: add the __init__ method from Task 3.
+
+    def is_real(self):
+        """Return True if the imaginary part is zero."""
+        pass
+
+    def is_imaginary(self):
+        """Return True if the real part is zero."""
+        pass
+```
+
+### Task 6
+
+Write a representation method which represents a complex number in the
+mathematical notation $a + i b$.
+
+```{pyodide-python}
+#| read-only: false
+class ComplexNumber:
+    # TODO: add the __init__ method from Task 3.
+
+    def __repr__(self):
+        # TODO: return a string of the form "a + i b".
+        pass
+```
+
+### Task 7
+
+Write a method which returns the complex number's argument and absolute value.
+
+```{pyodide-python}
+#| read-only: false
+import math
+
+class ComplexNumber:
+    # TODO: add the __init__ method from Task 3.
+
+    def argument(self):
+        """Return the argument (angle) of the complex number."""
+        pass
+
+    def modulus(self):
+        """Return the absolute value of the complex number."""
+        pass
+```
+
+### Task 8
+
+Write a method which checks if two complex numbers are equal.
+
+```{pyodide-python}
+#| read-only: false
+class ComplexNumber:
+    # TODO: add the __init__ method from Task 3.
+
+    def __eq__(self, other):
+        # TODO: implement equality check.
+        pass
+```
+
+### Task 9
+
+Define methods for operations such as addition, subtraction, multiplication,
+division and power of complex numbers. These methods should work also for
+operations between complex numbers, integers and real numbers (floats). Where
+appropriate, make sure that the result is independent of the order of the
+arguments.
+
+```{pyodide-python}
+#| read-only: false
+class ComplexNumber:
+    # TODO: add the __init__ method from Task 3.
+
+    def __add__(self, other):
+        pass
+
+    def __radd__(self, other):
+        pass
+
+    def __sub__(self, other):
+        pass
+
+    def __rsub__(self, other):
+        pass
+
+    def __mul__(self, other):
+        pass
+
+    def __rmul__(self, other):
+        pass
+
+    def __truediv__(self, other):
+        pass
+
+    def __rtruediv__(self, other):
+        pass
+
+    def __pow__(self, power):
+        pass
+```
+
+### Task 10
+
+Test your implementation by comparing to the Python native complex
+implementation.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: create ComplexNumber instances and compare with Python complex numbers.
+```

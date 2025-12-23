@@ -1,0 +1,216 @@
+---
+title: "Sheet Six"
+format: html
+filters:
+  - pyodide
+---
+
+NUMA01: Computational Programming with Python  
+Malin Christersson, Robert Klofkorn  
+
+This exercise trains knowledge about vectors and arrays, i.e. the basics from
+Chapter 4 and 5 in the course book.  
+This assignment has 8 tasks.
+
+## Warming-up Exercises
+
+### Task 1
+
+Read Chapter 4 of the course book.
+
+### Task 2
+
+Implement the following code.
+
+```{pyodide-python}
+#| read-only: false
+from numpy import array
+
+v = array([1.0, 2.0, 3.0])
+M = array([
+    [1.0, 2.0, 3.0],
+    [4.0, 5.0, 6.0],
+    [7.0, 8.0, 9.0],
+])
+
+# What does this line do?
+z = M @ v
+print(z)
+```
+
+---
+
+## Exercises
+
+### Task 3
+
+Consider a square matrix $A$ (number of rows is the same as columns).
+
+$A$ is symmetric if and only if $A = A^T$, i.e. if $a_{ij} = a_{ji}$ for indices
+$i, j$. Accordingly, $A$ is skew-symmetric if and only if $-A = A^T$.
+
+Write a function that takes a matrix as parameter. It should check if this matrix
+is symmetric. The function should return `1` for a symmetric matrix, `-1` for a
+skew-symmetric matrix and `0` otherwise. Test your function.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+def symmetry_type(A, tol=1e-12):
+    """Return 1 if symmetric, -1 if skew-symmetric, else 0."""
+    A = np.array(A, dtype=float)
+
+    # TODO: implement the checks using A.T and np.allclose.
+    return 0
+
+A1 = np.array([[1.0, 2.0], [2.0, 1.0]])
+A2 = np.array([[0.0, 1.0], [-1.0, 0.0]])
+A3 = np.array([[1.0, 2.0], [3.0, 4.0]])
+
+print("A1:", symmetry_type(A1))
+print("A2:", symmetry_type(A2))
+print("A3:", symmetry_type(A3))
+```
+
+### Task 4
+
+Write a function that takes two vectors as parameters. It should check if these
+vectors are orthogonal. If they are orthogonal it should return `True`, otherwise
+`False`.
+
+Do not forget to provide your function with a docstring.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+def are_orthogonal(u, v, tol=1e-12):
+    """Return True if u and v are orthogonal, otherwise False."""
+    u = np.array(u, dtype=float)
+    v = np.array(v, dtype=float)
+
+    # TODO: compute the dot product and compare to zero.
+    return False
+
+u = np.array([1.0, 2.0, -1.0])
+v = np.array([2.0, 0.0, 2.0])
+print("Orthogonal?", are_orthogonal(u, v))
+```
+
+### Task 5
+
+Write a function that takes a vector as parameter and returns the corresponding
+normalized vector, i.e. $x / \lVert x \rVert$.
+
+Write two variants of this program: one in which you compute the norm (use the
+2-norm) of the vector by yourself and another which uses the function `norm`
+from the module `numpy.linalg`.
+
+Recall that to be able to use NumPy's norm function you must have the line
+`from numpy.linalg import norm` at the start of your program. Note that you
+cannot then call your own function `norm` too. If this is inconvenient, use
+`from numpy.linalg import norm as npnorm` to give NumPy's norm function a new name.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+from numpy.linalg import norm as npnorm
+
+def normalize_manual(x):
+    """Normalize a vector using a manually computed 2-norm."""
+    x = np.array(x, dtype=float)
+
+    # TODO: compute the 2-norm manually and return the normalized vector.
+    pass
+
+def normalize_numpy(x):
+    """Normalize a vector using numpy.linalg.norm."""
+    x = np.array(x, dtype=float)
+
+    # TODO: compute the norm using npnorm and return the normalized vector.
+    pass
+
+vec = np.array([3.0, 4.0])
+print("Manual:", normalize_manual(vec))
+print("NumPy:", normalize_numpy(vec))
+```
+
+### Task 6
+
+Show experimentally that the inverse of a rotation matrix is its transpose.
+
+Hint: $B$ is the inverse of $A$ if $AB = BA = I$, the identity matrix.
+In 2D, a rotation matrix has the form
+
+$$
+\begin{pmatrix}
+\cos \alpha & \sin \alpha \\
+-\sin \alpha & \cos \alpha
+\end{pmatrix}
+$$
+
+where $\alpha$ can be any angle.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+def rotation_matrix(alpha):
+    return np.array([
+        [np.cos(alpha), np.sin(alpha)],
+        [-np.sin(alpha), np.cos(alpha)],
+    ])
+
+angles = [0.0, np.pi / 6, np.pi / 4, np.pi / 3]
+
+for alpha in angles:
+    R = rotation_matrix(alpha)
+    R_inv = np.linalg.inv(R)
+    R_T = R.T
+
+    # TODO: compare R_inv and R_T with np.allclose.
+    print("alpha:", alpha)
+```
+
+### Extra Task 7 (in case you want an extra challenge)
+
+(If you do not know eigenvalues yet, skip this task for now.)
+Construct a $20 \times 20$ matrix with the value 4 on its diagonal and the value 1
+on its sub- and super-diagonal. The rest of the matrix is zero.
+Compute its eigenvalues. (Use the function `eig` from the module `numpy.linalg`.)
+You might also want to check the function `diag` for this task.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+n = 20
+diag = 4.0 * np.ones(n)
+off = 1.0 * np.ones(n - 1)
+
+# TODO: build the tridiagonal matrix and compute its eigenvalues.
+
+print("Eigenvalues:", None)
+```
+
+### Extra Task 8 (in case you want an extra challenge)
+
+(If you do not know eigenvalues yet, skip this task for now.)
+Change the matrix in the above task in such a way that all the elements of its
+subdiagonal instead have the value $-1$. How are the eigenvalues affected by
+this change?
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+n = 20
+diag = 4.0 * np.ones(n)
+sub = -1.0 * np.ones(n - 1)
+sup = 1.0 * np.ones(n - 1)
+
+# TODO: build the modified matrix and compare eigenvalues.
+
+print("Eigenvalues (modified):", None)
+```

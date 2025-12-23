@@ -1,0 +1,92 @@
+---
+title: "Sheet Nine"
+format: html
+filters:
+  - pyodide
+---
+
+NUMA01: Computational Programming with Python  
+Malin Christersson, Robert Klofkorn  
+
+In this exercise we study inheritance of classes.  
+This assignment has 4 tasks.
+
+## Tasks
+
+### Task 1
+
+Define an abstract class `PolyGon`. It should have a method `plot` which plots
+the polygon by drawing its edges. It should also have an `__init__` method, which
+takes a list of corner points as input. Corner points are described by arrays with
+shape `(2,)` describing the coordinates of the corners. The `__init__` method
+assigns this corner list as an attribute and also computes the edges.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+import matplotlib.pyplot as plt
+from abc import ABC, abstractmethod
+
+class PolyGon(ABC):
+    def __init__(self, corners):
+        # TODO: store the corners and build the list of edges.
+        self.corners = corners
+        self.edges = []
+
+    @abstractmethod
+    def plot(self):
+        # TODO: draw the polygon edges using matplotlib.
+        pass
+```
+
+### Task 2
+
+Define a class `Rectangle` which inherits as much as possible from the parent
+class `PolyGon`. Provide it also with a method to compute the area.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+class Rectangle(PolyGon):
+    def __init__(self, corners):
+        super().__init__(corners)
+
+    def area(self):
+        # TODO: compute and return the rectangle area.
+        pass
+```
+
+### Task 3
+
+Define a third class `SpecialRectangle` which describes rectangles which have all
+its edges parallel to the coordinate axes. It should be constructed by inheritance
+from the class `Rectangle`.
+
+```{pyodide-python}
+#| read-only: false
+import numpy as np
+
+class SpecialRectangle(Rectangle):
+    def __init__(self, x_min, x_max, y_min, y_max):
+        # TODO: build corners from the bounds and call Rectangle.__init__.
+        pass
+```
+
+### Task 4
+
+Give this class a method `__contains__` such that for two given `SpecialRectangle`s
+`A` and `B` the statement `A in B` evaluates to `True` if `A` is contained in `B`
+and `False` otherwise.
+
+```{pyodide-python}
+#| read-only: false
+class SpecialRectangle(Rectangle):
+    def __init__(self, x_min, x_max, y_min, y_max):
+        # TODO: initialize and store bounds.
+        pass
+
+    def __contains__(self, other):
+        # TODO: return True if other is contained in self.
+        pass
+```
