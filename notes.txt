@@ -11,3 +11,7 @@ needs an additional plt.show() to display the both graphs?
 
 12 
 - get 3D example from the book
+
+13
+- time complexity analysis: my algo is linear, not super interesting, 
+was there a different intended solution here?

@@ -18,27 +18,17 @@ def crazzyPlus(a, b):
         raise ValueError("Inputs must be integers.")
     if a < 0 or b < 0:
         raise ValueError("Inputs must be non-negative.")
+    if b > a:
+        raise ValueError("Second input must be less than or equal to first.")
 
-    if a == 0 and b == 0:
-        return 0
+    first_part = a - b 
+    second_part = a + b
 
-    parts = []
-    while a > 0 or b > 0:
-        da = a % 10
-        db = b % 10
-        parts.append(str(da + db))
-        a //= 10
-        b //= 10
-
-    # Reverse the parts to restore left-to-right order.
-    parts_rev = []
-    for i in range(len(parts) - 1, -1, -1):
-        parts_rev.append(parts[i])
-
-    result_str = "".join(parts_rev)
+    result_str = str(first_part) + str(second_part)
+    
     return int(result_str)
 
-print(crazzyPlus(58, 76))  # 1214
+print(crazzyPlus(6, 4))  # 210
 ```
 
 ### Task 3
@@ -49,15 +39,17 @@ import unittest
 
 class TestCrazzyPlus(unittest.TestCase):
     def test_basic(self):
-        self.assertEqual(crazzyPlus(0, 0), 0)
-        self.assertEqual(crazzyPlus(12, 34), 46)
-        self.assertEqual(crazzyPlus(58, 76), 1214)
+        self.assertEqual(crazzyPlus(9, 2), 711)
+        self.assertEqual(crazzyPlus(8, 5), 313)
+        self.assertEqual(crazzyPlus(5, 2), 37)
 
     def test_invalid(self):
         with self.assertRaises(ValueError):
             crazzyPlus(-1, 2)
         with self.assertRaises(ValueError):
             crazzyPlus(1.5, 2)
+        with self.assertRaises(ValueError):
+            crazzyPlus(3, 5)
 
 suite = unittest.TestLoader().loadTestsFromTestCase(TestCrazzyPlus)
 unittest.TextTestRunner().run(suite)
