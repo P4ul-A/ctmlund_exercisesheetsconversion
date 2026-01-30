@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sheet Two – ExerciseTest</title>
+<title>Sheet Seven Solutions – ExerciseTest</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -230,7 +230,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"code":"x=0 . 5 # x_0\nfor i in range ( 200 ):\n    x=x**2 # x_i\nprint ( f'The result after {i+1} iterations is {x}')","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qpyodideCellDetails = [{"code":"import numpy as np\n\nrng = np.random.default_rng(0)\nn = 5\n\nA = rng.standard_normal((n, n))\nA = 0.5 * (A + A.T)\n\neigvals, eigvecs = np.linalg.eigh(A)\n\nmax_imag = np.max(np.abs(eigvals.imag))\northogonality = eigvecs.T @ eigvecs\nidentity = np.eye(n)\nmax_off = np.max(np.abs(orthogonality - identity))\n\nprint(\"Max imaginary part:\", max_imag)\nprint(\"Max off-diagonal:\", max_off)","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import numpy as np\n\ndef build_matrix_diag(u):\n    u = np.array(u, dtype=float)\n    n = len(u)\n    main = -2.0 * u\n    lower = u[:-1]\n    upper = u[1:]\n    return np.diag(main) + np.diag(lower, k=-1) + np.diag(upper, k=1)\n\ndef build_matrix_loops(u):\n    u = np.array(u, dtype=float)\n    n = len(u)\n    A = np.zeros((n, n))\n\n    for i in range(n):\n        A[i, i] = -2.0 * u[i]\n    for i in range(n - 1):\n        A[i + 1, i] = u[i]\n        A[i, i + 1] = u[i + 1]\n    return A\n\nu = np.array([1.0, 2.0, 3.0, 4.0])\nprint(build_matrix_diag(u))\nprint(build_matrix_loops(u))","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\ndef build_matrix_diag(u):\n    u = np.array(u, dtype=float)\n    n = len(u)\n    main = -2.0 * u\n    lower = u[:-1]\n    upper = u[1:]\n    return np.diag(main) + np.diag(lower, k=-1) + np.diag(upper, k=1)\n\nu = np.linspace(0.0, 2.0 * np.pi, 500)\nD = build_matrix_diag(u)\n\nS = np.sin(D)\nones = np.ones(len(u))\ny = S @ ones\n\nplt.plot(u, y)\nplt.xlabel(\"u\")\nplt.ylabel(\"sin(D) * 1\")\nplt.title(\"Result of sin(D) times ones vector\")\nplt.show()","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 
 </script>
@@ -461,8 +461,16 @@ globalThis._qpyodideGetInstance = function() {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#task-1" id="toc-task-1" class="nav-link active" data-scroll-target="#task-1">Task 1</a></li>
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
+  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -479,7 +487,7 @@ globalThis._qpyodideGetInstance = function() {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sheet Two</h1>
+<h1 class="title">Sheet Seven Solutions</h1>
 </div>
 
 
@@ -496,11 +504,23 @@ globalThis._qpyodideGetInstance = function() {
 </header>
 
 
-<p>For a demonstration of a line plot on a polar axis, see <strong>?@fig-polar</strong>.</p>
+<section id="task-1" class="level3">
+<h3 class="anchored" data-anchor-id="task-1">Task 1</h3>
 <div id="qpyodide-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="task-2" class="level3">
+<h3 class="anchored" data-anchor-id="task-2">Task 2</h3>
+<div id="qpyodide-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="task-3" class="level3">
+<h3 class="anchored" data-anchor-id="task-3">Task 3</h3>
+<div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

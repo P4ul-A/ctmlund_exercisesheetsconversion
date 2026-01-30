@@ -30,3 +30,8 @@ Welcome to the exercise collection for NUMA01.
 - [Sheet 13 Solutions](sheet_13_solutions.qmd)
 
 Explore each sheet to read the tasks and run the embedded Python examples directly in the browser.
+
+Project within the **CTM Lund Erasmus Project**
+
+Exercise sheets from the NUMA1 - Computational Programming with Python course
+Lecturer: Dr. Robert Klöfkorn

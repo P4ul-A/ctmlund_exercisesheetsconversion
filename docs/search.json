@@ -1,0 +1,317 @@
+[
+  {
+    "objectID": "sheet_2_solutions.html",
+    "href": "sheet_2_solutions.html",
+    "title": "Sheet Two Solutions",
+    "section": "",
+    "text": "Task 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 9\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 10\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 11\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 12\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 14.1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 14.2\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_5_solutions.html",
+    "href": "sheet_5_solutions.html",
+    "title": "Sheet Five Solutions",
+    "section": "",
+    "text": "Task 1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_11_solutions.html",
+    "href": "sheet_11_solutions.html",
+    "title": "Sheet Eleven Solutions",
+    "section": "",
+    "text": "Task 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 9\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 10\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 11\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_4.html",
+    "href": "sheet_4.html",
+    "title": "Sheet Four",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klöfkorn\nThe purpose of this training assignment is to experiment more with plotting and functions.\nThis assignment has 6 tasks."
+  },
+  {
+    "objectID": "sheet_4.html#warming-up-exercises",
+    "href": "sheet_4.html#warming-up-exercises",
+    "title": "Sheet Four",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nImplement the following code.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\nRead Chapter 6, section Formatting to learn how to change the plotting style and add a legend."
+  },
+  {
+    "objectID": "sheet_4.html#exercises",
+    "href": "sheet_4.html#exercises",
+    "title": "Sheet Four",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 3 – Complex valued functions\nThe complex valued function \\(f(\\varphi, r) = r e^{i \\varphi}\\) describes a circle with radius \\(r\\) in the complex plane when \\(r\\) is fixed and \\(\\varphi\\) varies between \\(0\\) and \\(2\\pi\\). Set up a function that evaluates \\(f\\) and plot it for a fixed value of \\(r\\). Note: the real part of a complex variable \\(z\\) is z.real and the imaginary part is z.imag. The imaginary unit \\(i\\) is written as 1j in Python.\nThen let \\(r\\) vary from 0.1 to 1.0 and plot the corresponding concentric circles. You should see several circles centered at the origin.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4 – Euler’s formula\nStudy https://en.wikipedia.org/wiki/Euler%27s_formula and relate it to Task 3.\n\n\nTask 5 – Newton’s Method\nNewton’s method iteratively finds a root of a function \\(f\\) via\n\\[\nx_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}.\n\\]\nStart from a value \\(x_0\\) and stop when \\(|x_{n+1} - x_n| &lt; \\text{TOL}\\) or after at most 400 iterations.\nWrite a function newton that takes f, fp (the derivative), x0 (start value), and tol (tolerance). It should return the last value and a flag conv indicating whether convergence was observed. Try the method with a function myfunc of your choice and its derivative myfuncp.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nExtra Task 6\nCompare the number of iterations needed to find a root within tolerance \\(1\\times 10^{-8}\\) for Newton’s method and for the bisection method from Exercise 3. Store the values \\(|x_{n+1} - x_n|\\) for each iteration \\(n\\) for both methods and plot iteration number versus \\(|x_{n+1} - x_n|\\). Discuss what you observe.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_8_solutions.html",
+    "href": "sheet_8_solutions.html",
+    "title": "Sheet Eight Solutions",
+    "section": "",
+    "text": "Task 2\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 9\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 10\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_12_solutions.html",
+    "href": "sheet_12_solutions.html",
+    "title": "Sheet Twelve Solutions",
+    "section": "",
+    "text": "Task 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_6.html",
+    "href": "sheet_6.html",
+    "title": "Sheet Six",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klofkorn\nThis exercise trains knowledge about vectors and arrays, i.e. the basics from Chapter 4 and 5 in the course book.\nThis assignment has 8 tasks."
+  },
+  {
+    "objectID": "sheet_6.html#warming-up-exercises",
+    "href": "sheet_6.html#warming-up-exercises",
+    "title": "Sheet Six",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nRead Chapter 4 of the course book.\n\n\nTask 2\nImplement the following code.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_6.html#exercises",
+    "href": "sheet_6.html#exercises",
+    "title": "Sheet Six",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 3\nConsider a square matrix \\(A\\) (number of rows is the same as columns).\n\\(A\\) is symmetric if and only if \\(A = A^T\\), i.e. if \\(a_{ij} = a_{ji}\\) for indices \\(i, j\\). Accordingly, \\(A\\) is skew-symmetric if and only if \\(-A = A^T\\).\nWrite a function that takes a matrix as parameter. It should check if this matrix is symmetric. The function should return 1 for a symmetric matrix, -1 for a skew-symmetric matrix and 0 otherwise. Test your function.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nWrite a function that takes two vectors as parameters. It should check if these vectors are orthogonal. If they are orthogonal it should return True, otherwise False.\nDo not forget to provide your function with a docstring.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\nWrite a function that takes a vector as parameter and returns the corresponding normalized vector, i.e. \\(x / \\lVert x \\rVert\\).\nWrite two variants of this program: one in which you compute the norm (use the 2-norm) of the vector by yourself and another which uses the function norm from the module numpy.linalg.\nRecall that to be able to use NumPy’s norm function you must have the line from numpy.linalg import norm at the start of your program. Note that you cannot then call your own function norm too. If this is inconvenient, use from numpy.linalg import norm as npnorm to give NumPy’s norm function a new name.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\nShow experimentally that the inverse of a rotation matrix is its transpose.\nHint: \\(B\\) is the inverse of \\(A\\) if \\(AB = BA = I\\), the identity matrix. In 2D, a rotation matrix has the form\n\\[\n\\begin{pmatrix}\n\\cos \\alpha & \\sin \\alpha \\\\\n-\\sin \\alpha & \\cos \\alpha\n\\end{pmatrix}\n\\]\nwhere \\(\\alpha\\) can be any angle.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nExtra Task 7 (in case you want an extra challenge)\n(If you do not know eigenvalues yet, skip this task for now.) Construct a \\(20 \\times 20\\) matrix with the value 4 on its diagonal and the value 1 on its sub- and super-diagonal. The rest of the matrix is zero. Compute its eigenvalues. (Use the function eig from the module numpy.linalg.) You might also want to check the function diag for this task.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nExtra Task 8 (in case you want an extra challenge)\n(If you do not know eigenvalues yet, skip this task for now.) Change the matrix in the above task in such a way that all the elements of its subdiagonal instead have the value \\(-1\\). How are the eigenvalues affected by this change?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ExerciseTest",
+    "section": "",
+    "text": "Welcome to the exercise collection for NUMA01."
+  },
+  {
+    "objectID": "index.html#exercise-sheets",
+    "href": "index.html#exercise-sheets",
+    "title": "ExerciseTest",
+    "section": "Exercise Sheets",
+    "text": "Exercise Sheets\n\nSheet 2\nSheet 2 Solutions\nSheet 3\nSheet 3 Solutions\nSheet 4\nSheet 4 Solutions\nSheet 5\nSheet 5 Solutions\nSheet 6\nSheet 6 Solutions\nSheet 7\nSheet 7 Solutions\nSheet 8\nSheet 8 Solutions\nSheet 9\nSheet 9 Solutions\nSheet 11\nSheet 11 Solutions\nSheet 12\nSheet 12 Solutions\nSheet 13\nSheet 13 Solutions\n\nExplore each sheet to read the tasks and run the embedded Python examples directly in the browser.\nProject within the CTM Lund Erasmus Project\nExercise sheets from the NUMA1 - Computational Programming with Python course Lecturer: Dr. Robert Klöfkorn"
+  },
+  {
+    "objectID": "sheet_13_solutions.html",
+    "href": "sheet_13_solutions.html",
+    "title": "Sheet Thirteen Solutions",
+    "section": "",
+    "text": "Task 1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_11.html",
+    "href": "sheet_11.html",
+    "title": "Sheet Eleven",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klofkorn\nThe purpose of this training exercise is to work with object oriented techniques in plotting.\nThis assignment has 11 tasks."
+  },
+  {
+    "objectID": "sheet_11.html#warming-up-exercises",
+    "href": "sheet_11.html#warming-up-exercises",
+    "title": "Sheet Eleven",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nObtain the mandelbrot function code from the course book Chapter 6 - Plotting and create the same plot as in the book. While there glance through the chapter.\n\n\nTask 2\nChange the color map for the plot. Potential color maps can be obtained by\nfrom matplotlib import colormaps\nprint(colormaps)"
+  },
+  {
+    "objectID": "sheet_11.html#exercises",
+    "href": "sheet_11.html#exercises",
+    "title": "Sheet Eleven",
+    "section": "Exercises",
+    "text": "Exercises\nWe imagine that we are in a teaching situation and want to demonstrate properties of a polynomial.\n\nTask 3\nChoose a polynomial of degree 3 and plot it together with its first derivative.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nPlot a tangent segment to this curve at its inflection point(s).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\nDo the same for its extremal values.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\nMake the tangents a small, black, dotted line.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\nMake the polynomial curve thicker than its derivative.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\nAdd annotations.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 9\nPut only the x and y coordinate of these points as tick labels.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 10\nGive the figure a title.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 11\nSave it as a png file.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_12.html",
+    "href": "sheet_12.html",
+    "title": "Sheet Twelve",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klofkorn\nThis exercise demonstrates the use of matplotlib’s GUI and continues Training Exercise 11.\nThis assignment has 4 tasks."
+  },
+  {
+    "objectID": "sheet_12.html#warming-up-exercises",
+    "href": "sheet_12.html#warming-up-exercises",
+    "title": "Sheet Twelve",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nConsult the matplotlib documentation: https://matplotlib.org/stable/gallery/.\nObtain the code for the Axes Demo and run it. While there also look at other examples you find interesting.\n\n\nTask 2\nObtain the code for one of the 3D plotting examples from the book Chapter 6 - Plotting and run it. Compare with the 3D plotting examples that you find on the matplotlib documentation page."
+  },
+  {
+    "objectID": "sheet_12.html#exercises",
+    "href": "sheet_12.html#exercises",
+    "title": "Sheet Twelve",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 3\nConsider the function \\(\\sin(\\omega x)\\) and its second degree Taylor polynomial when expanded about a given point \\(x_0\\). The aim of this task is to study the change of the Taylor polynomials in dependence of \\(x_0\\) and \\(\\omega\\). Modify your code of Assignment 11, so that it plots the function and its Taylor polynomial when \\(x_0\\) and \\(\\omega\\) are given. Plot these two functions over the interval \\([0, 2\\pi]\\) in the way you plotted them in Training Assignment 11, Task 2 and 3.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nDesign and program a GUI which serves as a user friendly way to input interactively the two parameters \\(x_0\\) and \\(\\omega\\) to fast and easily vary the curves to demonstrate their dependency on these parameters. Equip the GUI with all necessary text to make your program a good demonstration tool for Taylor’s theorem.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_7_solutions.html",
+    "href": "sheet_7_solutions.html",
+    "title": "Sheet Seven Solutions",
+    "section": "",
+    "text": "Task 1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_3_solutions.html",
+    "href": "sheet_3_solutions.html",
+    "title": "Sheet Three Solutions",
+    "section": "",
+    "text": "Task 4\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_4_solutions.html",
+    "href": "sheet_4_solutions.html",
+    "title": "Sheet Four Solutions",
+    "section": "",
+    "text": "Task 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_13.html",
+    "href": "sheet_13.html",
+    "title": "Sheet Thirteen",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klofkorn\nIn this exercise we work with tests, both unit tests and pytest.\nThis assignment has 6 tasks."
+  },
+  {
+    "objectID": "sheet_13.html#tasks",
+    "href": "sheet_13.html#tasks",
+    "title": "Sheet Thirteen",
+    "section": "Tasks",
+    "text": "Tasks\n\nTask 1\nImplement a function crazzyPlus(a, b) which sums two integers in a way as described in the figure a friend found in a newspaper a while ago. Decide for which range of arguments a, b you want to design your function. Raise a ValueError if your function is called with wrong arguments.\n\n\nTask 2\nWhat is the time complexity of the algorithm that you designed?\n\n\nTask 3\nDesign and write tests for this function. Either use unittest or pytest for this. You should test:\n\nThe correct result for several test cases\nThat the exception is raised, when wrong arguments are used.\n\n\n\nTask 4\nUse the command %timeit and %%timeit to obtain some timings about the code that you wrote. Profile your program using the %lprun command in the IPython shell. Consult the lecture slides for explanation about %lprun.\n\n\nExtra Task 5 (in case you want an extra challenge)\nYou are given an array of N random positive integers, i.e. \\(i \\in \\mathbb{N}\\). Find the smallest positive number missing from the array. The expected time complexity is \\(O(N)\\). Check that your implementation fulfills this.\n\n\nExtra Task 6 (in case you want an extra challenge)\nCreate an \\(n \\times m\\) matrix randomly filled with the values 0 or 1. Imagine that 0 stands for water and 1 means land. Find the number of islands. An island is either surrounded by water or at the boundary of the matrix and is formed by connecting adjacent lands horizontally or vertically or diagonally, i.e., in all 8 directions. Write a code that can find all islands given in a domain (matrix). The expected time complexity is \\(O(n m)\\). Experimentally check that your implementation fulfills this."
+  },
+  {
+    "objectID": "sheet_9.html",
+    "href": "sheet_9.html",
+    "title": "Sheet Nine",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klofkorn\nIn this exercise we study inheritance of classes.\nThis assignment has 4 tasks."
+  },
+  {
+    "objectID": "sheet_9.html#tasks",
+    "href": "sheet_9.html#tasks",
+    "title": "Sheet Nine",
+    "section": "Tasks",
+    "text": "Tasks\n\nTask 1\nDefine an abstract class PolyGon. It should have a method plot which plots the polygon by drawing its edges. It should also have an __init__ method, which takes a list of corner points as input. Corner points are described by arrays with shape (2,) describing the coordinates of the corners. The __init__ method assigns this corner list as an attribute and also computes the edges.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\nDefine a class Rectangle which inherits as much as possible from the parent class PolyGon. Provide it also with a method to compute the area.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 3\nDefine a third class SpecialRectangle which describes rectangles which have all its edges parallel to the coordinate axes. It should be constructed by inheritance from the class Rectangle.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nGive this class a method __contains__ such that for two given SpecialRectangles A and B the statement A in B evaluates to True if A is contained in B and False otherwise.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_8.html",
+    "href": "sheet_8.html",
+    "title": "Sheet Eight",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klofkorn\nIn this exercise we define some classes to start to become familiar with the principle syntax and methods.\nThis assignment has 10 tasks."
+  },
+  {
+    "objectID": "sheet_8.html#warming-up-exercises",
+    "href": "sheet_8.html#warming-up-exercises",
+    "title": "Sheet Eight",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nRead Chapter 8 of the course book.\n\n\nTask 2\nObtain the RationalNumber example for the lecture and add a method for subtraction. Use the operator __sub__.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_8.html#exercises",
+    "href": "sheet_8.html#exercises",
+    "title": "Sheet Eight",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 3\nDefine a class ComplexNumber and write an appropriate __init__ method.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nWrite a method which returns the complex number’s real part, and one which returns the imaginary part.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\nWrite methods is_imaginary and is_real. They should return Boolean answers.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\nWrite a representation method which represents a complex number in the mathematical notation \\(a + i b\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\nWrite a method which returns the complex number’s argument and absolute value.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\nWrite a method which checks if two complex numbers are equal.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 9\nDefine methods for operations such as addition, subtraction, multiplication, division and power of complex numbers. These methods should work also for operations between complex numbers, integers and real numbers (floats). Where appropriate, make sure that the result is independent of the order of the arguments.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 10\nTest your implementation by comparing to the Python native complex implementation.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_9_solutions.html",
+    "href": "sheet_9_solutions.html",
+    "title": "Sheet Nine Solutions",
+    "section": "",
+    "text": "Task 1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Project within the CTM Lund Erasmus Project\nExercise sheets from the NUMA1 - Computational Programming with Python course Lecturer: Dr. Robert Klöfkorn"
+  },
+  {
+    "objectID": "sheet_7.html",
+    "href": "sheet_7.html",
+    "title": "Sheet Seven",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nClaus Fuhrer, Malin Christersson, Robert Klofkorn\nThis assignment has 3 tasks."
+  },
+  {
+    "objectID": "sheet_7.html#exercises",
+    "href": "sheet_7.html#exercises",
+    "title": "Sheet Seven",
+    "section": "Exercises",
+    "text": "Exercises\nFor these tasks you need knowledge about vectors and arrays, Chapter 4/5 in the course book.\n\nTask 1\nA central theorem in linear algebra says that the eigenvalues of real symmetric matrices are real and that their eigenvectors are orthogonal. Try to verify this theorem by using square random matrices of dimensions not less than 5.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\nGiven a vector \\(u \\in \\mathbb{R}^n\\). Construct a \\(n \\times n\\) matrix \\(A\\) with the properties\n\\[\nA_{i,i} = -2 u_i,\\quad i = 1, \\dots, n,\n\\]\n\\[\nA_{i+1,i} = u_i,\\quad i = 1, \\dots, n-1,\n\\]\n\\[\nA_{i,i+1} = u_{i+1},\\quad i = 1, \\dots, n-1,\n\\]\nand all other elements being zero.\nDo this task by using the NumPy command diag and alternatively by using for-loops. Write a function that takes a vector and returns such a matrix.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 3\nCall the function you created in the last task with\nu = linspace(0, 2 * pi, 500)\nas input to get a matrix \\(D\\). Compute the matrix \\(\\sin(D)\\). Multiply this matrix with the one-vector (a vector filled with 1’s) and plot the result versus \\(u\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_5.html",
+    "href": "sheet_5.html",
+    "title": "Sheet Five",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klofkorn\nThis assignment has 8 tasks."
+  },
+  {
+    "objectID": "sheet_5.html#warming-up-exercises",
+    "href": "sheet_5.html#warming-up-exercises",
+    "title": "Sheet Five",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\nConsult the lecture notes for solutions to the warming-up exercises.\n\nTask 1\nWrite a function that implements the polynomial\n\\[\np(x) = a x^3 + b x^2 + c x + d.\n\\]\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\nRewrite your polynomial from the previous task such that the coefficients are represented by a list (of length 4).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 3\nDiscuss with your colleagues how to use packing/unpacking techniques to use a list as input for the polynomial from the first task.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nRewrite your polynomial such that arbitrary polynomials can be represented, i.e. lists of coefficients of arbitrary length.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_5.html#exercises",
+    "href": "sheet_5.html#exercises",
+    "title": "Sheet Five",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 5 - Integrals\nCompute approximately the integral\n\\[\n\\int_0^{\\pi/2} \\sin(\\omega x)\\,dx\n\\]\nfor \\(\\omega = 2\\pi\\).\nFor this end run at the beginning of your program the import statement\nfrom scipy.integrate import quad\nThe method to integrate a function \\(f\\) over an interval \\([a, b]\\) is quad(f, a, b). It returns a tuple with the approximated solution and the estimated error.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6 - Integrals and plots\nCompute the integral above for 1000 equidistant values of \\(\\omega\\) in the interval \\([0, 2\\pi]\\) and plot the results versus \\(\\omega\\). Label the axes and add a title to the plot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7 - Zeros of a function\nUse scipy.optimize.fsolve to compute the positive zero of the polynomial \\(p(x) = x^2 + x - 3\\). Use your implemented polynomial with the appropriate coefficients.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8 - Zeros of a parameter dependent function\nPlot the positive zeros of the polynomials\n\\[\np(x) = a x^2 + x - 3\n\\]\nfor \\(a \\in [1, 5]\\) versus \\(a\\). Do the zeros depend linearly on \\(a\\)?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_3.html",
+    "href": "sheet_3.html",
+    "title": "Sheet Three",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klöfkorn\nThe purpose of this training assignment is to repeat list comprehensions, practice slicing, work more with functions, and investigate sets in Python.\nYou should not run the code before you have written down what it will do when executed.\nThis assignment has 8 tasks."
+  },
+  {
+    "objectID": "sheet_3.html#warming-up-exercises",
+    "href": "sheet_3.html#warming-up-exercises",
+    "title": "Sheet Three",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nAssume we have stored the following values in a list:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 2\nWhat parts of the following code generate an error, and why?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_3.html#programming-exercises",
+    "href": "sheet_3.html#programming-exercises",
+    "title": "Sheet Three",
+    "section": "Programming Exercises",
+    "text": "Programming Exercises\n\nTask 3\nTransition to the programming exercises below.\n\n\nTask 4\nLet a distance table between some villages be given by:\n\\[\n\\begin{bmatrix}\n0 & 20 & 30 & 40\\\\\n20 & 0 & 50 & 60\\\\\n30 & 50 & 0 & 70\\\\\n40 & 60 & 70 & 0\n\\end{bmatrix}\n\\]\n\nConstruct a list (of lists) that contains this data. Call this list distance.\n\nConstruct from this list a list reddistance which contains only the relevant data in the following form:\n\n\\[\n\\begin{bmatrix}\n20\\\\\n30 & 50\\\\\n40 & 60 & 70\n\\end{bmatrix}\n\\]\nUse slicing for this task. Solve it two ways: (1) with for-loops and (2) using only list comprehension and slicing.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\nLet \\(A\\) and \\(B\\) be sets. The set \\((A \\setminus B) \\cup (B \\setminus A)\\) is called the symmetric difference of the two sets.\nWrite a function that performs this operation. Compare your results to A.symmetric_difference(B).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\nStudy other operations on sets. You find a complete list by using tab-completion in Spyder/IPython after typing A. where A is a previously defined set in Python.\nIn particular, study the methods update and intersection_update. Explain the difference between the commands intersection and intersection_update.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\nTest in Python (with a couple of examples) the statement that the empty set is a subset of any set.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\nBisection Method. A continuous function that changes sign in an interval \\([a, b]\\) has at least one root there. Such a root can be found by the bisection method.\nStarting from \\([a, b]\\), investigate the sign change in the subintervals \\([a, \\tfrac{a+b}{2}]\\) and \\([\\tfrac{a+b}{2}, b]\\). If the sign changes in the first subinterval, redefine \\(b := \\tfrac{a+b}{2}\\); otherwise set \\(a := \\tfrac{a+b}{2}\\). Repeat until \\(b - a\\) is less than a given tolerance. Note that a sign change is characterized by \\(f(a) f(b) &lt; 0\\).\nImplement this algorithm. It needs the initial interval \\([a, b]\\) and the tolerance. Test the method with the function \\(\\arctan(x)\\) and with the polynomial \\(f(x) = 3x^2 - 5\\) in the interval \\([-0.5, 0.6]\\) and alternatively in \\([-1.5, -0.4]\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "sheet_2.html",
+    "href": "sheet_2.html",
+    "title": "Sheet Two",
+    "section": "",
+    "text": "NUMA01: Computational Programming with Python\nMalin Christersson, Robert Klöfkorn\nThe purpose of this training assignment is to work with lists and for loops.\nYou should start working on these exercises during the scheduled computer lab hours and complete them on your own at home.\nThis assignment has 14 tasks."
+  },
+  {
+    "objectID": "sheet_2.html#warming-up-exercises",
+    "href": "sheet_2.html#warming-up-exercises",
+    "title": "Sheet Two",
+    "section": "Warming-up Exercises",
+    "text": "Warming-up Exercises\n\nTask 1\nRead the debugging documentation for Spyder:\nhttps://docs.spyder-ide.org/5/panes/debugging.html\nWhile you are there, check for other interesting topics that you want to know about your editor.\nIf you are using a different editor, then find out how to do debugging in your editor.\n\n\nTask 2\nImplement the following for loop and inspect each iteration with the debugger.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote: For \\(x_0 &lt; 1\\) the above iteration is called a fixed point iteration, because for all starting values \\(x_0 &lt; 1\\) this will converge to \\(0\\). For \\(x_0 &gt; 1\\) it will diverge. What about \\(x_0 = 1\\)?"
+  },
+  {
+    "objectID": "sheet_2.html#exercises",
+    "href": "sheet_2.html#exercises",
+    "title": "Sheet Two",
+    "section": "Exercises",
+    "text": "Exercises\n\nTask 3\nRecall the if statement from the lecture and check whether the expression \\(x^2 + 0.25x - 5\\) is zero for \\(x = 2.3\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\nTry out this code segment from the lecture and test the listed commands.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNow test:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\nWhat does the following command do?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAdd a comment in the code (or write in text) explaining what happens.\n\n\nTask 6\nConcatenate L3 and L4 to a new list L5.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\nUse the command range and a list comprehension to generate a list with 100 equidistantly spaced values between (and including) 0 and 1.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\nWhat does this code do?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nand this one:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nCompare the last element in the list ss with s.\nWhat is the value of i after the execution of the for loop?\n\n\nTask 9\nAgain, like in Task 7, set up a list with the name xplot which contains 100 equidistant values between 0 and 1. But this time, use a for-loop with a counter instead of a list comprehension.\nPay attention to the append-method for lists. You might need to generate an empty list first.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 10\nSet up a list yplot which contains the values \\(\\arctan(x)\\) for all the x in xplot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 11\nMake a plot of yplot versus xplot.\nUse the command plot. Depending on your environment, you might also need to run show() to show the plot.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 12\nCompute $ _{i=1}^{200} $.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 13\nRead:\n\nChapter 1 up to (but not including) Encapsulating code with functions\nChapter 3.1 (Lists)\n\nof the course book, to repeat the things that you have used so far."
+  },
+  {
+    "objectID": "sheet_2.html#extra-task-14-in-case-you-want-an-extra-challenge",
+    "href": "sheet_2.html#extra-task-14-in-case-you-want-an-extra-challenge",
+    "title": "Sheet Two",
+    "section": "Extra Task 14 (in case you want an extra challenge)",
+    "text": "Extra Task 14 (in case you want an extra challenge)\nNow we use lists for recursions. Consider the recursion formula\n\\(u_{n+3} = u_{n+2} + h a\\left(\\frac{23}{12}u_{n+2} - \\frac{4}{3}u_{n+1} + \\frac{5}{12}u_n\\right)\\)\nwith \\(n = 0, \\dots, 1000\\), \\(h = \\frac{1}{1000}\\) and \\(a = -0.5\\).\n\nTask 14.1 – Build the list \\(u\\)\n\nCreate a list u.\nStore in its first three elements \\(e^{0}\\), \\(e^{h a}\\) and \\(e^{2h a}\\).\nThese represent \\(u_0\\), \\(u_1\\), and \\(u_2\\) in the above formula.\nBuild up the complete list from the recursion formula.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 14.2 – Build td, plot \\(t_d\\) versus u, and plot the error\n\nConstruct a second list td in which you store the values \\(n h\\), with \\(n = 0, \\dots, 1000\\).\nPlot td versus u.\nMake a second plot in which you plot the difference, i.e. \\(|e^{a t_n} - u_n|\\), where \\(t_n\\) represents the values inside the vector td.\n\nThe abs function computes the absolute value of a number.\nSet axis labels and a title (investigate the commands xlabel, ylabel and title).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIf you have time, plot both the approximation and the exact solution in the same figure and compare the result. The approximation is quite good, so you might want to plot the difference between the approximation and the exact solution instead.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe mathematical background to this problem will be taught in later courses when you become familiar with differential equations.\nGood luck!"
+  },
+  {
+    "objectID": "sheet_6_solutions.html",
+    "href": "sheet_6_solutions.html",
+    "title": "Sheet Six Solutions",
+    "section": "",
+    "text": "Task 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 4\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 5\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 6\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 7\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nTask 8\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  }
+]
