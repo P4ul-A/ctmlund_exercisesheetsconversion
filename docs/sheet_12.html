@@ -230,7 +230,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\ndef taylor_sin(x, x0, omega):\n    # TODO: compute second degree Taylor polynomial of sin(omega x) about x0.\n    pass\n\nx0 = 0.0\nomega = 1.0\n\nx = np.linspace(0.0, 2.0 * np.pi, 400)\ny = np.sin(omega * x)\nyt = taylor_sin(x, x0, omega)\n\nplt.plot(x, y, label=\"sin(omega x)\")\nplt.plot(x, yt, label=\"Taylor polynomial\")\nplt.legend()\nplt.show()","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.widgets import Slider\n\n# TODO: build a GUI with sliders for x0 and omega and update the curves.","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qpyodideCellDetails = [{"code":"# TODO: obtain and run the Axes Demo example.","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# TODO: obtain and run a 3D plotting example from the book.","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# TODO: plot sin(omega x) and its Taylor polynomial for given x0 and omega.","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# TODO: build a GUI to vary x0 and omega interactively.","id":4,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 
 </script>
@@ -544,16 +544,21 @@ window.Quarto = {
 Malin Christersson, Robert Klofkorn</p>
 <p>This exercise demonstrates the use of matplotlib’s GUI and continues Training Exercise 11.<br>
 This assignment has 4 tasks.</p>
+<p>Solutions: <a href="./sheet_12_solutions.html">Sheet 12 Solutions</a></p>
 <section id="warming-up-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="warming-up-exercises">Warming-up Exercises</h2>
 <section id="task-1" class="level3">
 <h3 class="anchored" data-anchor-id="task-1">Task 1</h3>
 <p>Consult the matplotlib documentation: <a href="https://matplotlib.org/stable/gallery/" class="uri">https://matplotlib.org/stable/gallery/</a>.<br>
 Obtain the code for the Axes Demo and run it. While there also look at other examples you find interesting.</p>
+<div id="qpyodide-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="task-2" class="level3">
 <h3 class="anchored" data-anchor-id="task-2">Task 2</h3>
 <p>Obtain the code for one of the 3D plotting examples from the book Chapter 6 - Plotting and run it. Compare with the 3D plotting examples that you find on the matplotlib documentation page.</p>
+<div id="qpyodide-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <hr>
 </section>
 </section>
@@ -562,13 +567,13 @@ Obtain the code for the Axes Demo and run it. While there also look at other exa
 <section id="task-3" class="level3">
 <h3 class="anchored" data-anchor-id="task-3">Task 3</h3>
 <p>Consider the function <span class="math inline">\(\sin(\omega x)\)</span> and its second degree Taylor polynomial when expanded about a given point <span class="math inline">\(x_0\)</span>. The aim of this task is to study the change of the Taylor polynomials in dependence of <span class="math inline">\(x_0\)</span> and <span class="math inline">\(\omega\)</span>. Modify your code of Assignment 11, so that it plots the function and its Taylor polynomial when <span class="math inline">\(x_0\)</span> and <span class="math inline">\(\omega\)</span> are given. Plot these two functions over the interval <span class="math inline">\([0, 2\pi]\)</span> in the way you plotted them in Training Assignment 11, Task 2 and 3.</p>
-<div id="qpyodide-insertion-location-1"></div>
+<div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="task-4" class="level3">
 <h3 class="anchored" data-anchor-id="task-4">Task 4</h3>
 <p>Design and program a GUI which serves as a user friendly way to input interactively the two parameters <span class="math inline">\(x_0\)</span> and <span class="math inline">\(\omega\)</span> to fast and easily vary the curves to demonstrate their dependency on these parameters. Equip the GUI with all necessary text to make your program a good demonstration tool for Taylor’s theorem.</p>
-<div id="qpyodide-insertion-location-2"></div>
+<div id="qpyodide-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 

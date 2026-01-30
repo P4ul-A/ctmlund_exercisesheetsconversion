@@ -10,6 +10,8 @@ Malin Christersson, Robert Klofkorn
 
 This assignment has 8 tasks.
 
+Solutions: [Sheet 5 Solutions](sheet_5_solutions.qmd)
+
 ## Warming-up Exercises
 
 Consult the lecture notes for solutions to the warming-up exercises.
@@ -24,10 +26,7 @@ $$
 
 ```{pyodide-python}
 #| read-only: false
-def poly_cubic(x, a, b, c, d):
-    """Evaluate p(x) = a*x**3 + b*x**2 + c*x + d."""
-    # TODO: implement the polynomial.
-    pass
+# TODO: implement the polynomial p(x) = a x^3 + b x^2 + c x + d.
 ```
 
 ### Task 2
@@ -37,15 +36,7 @@ represented by a list (of length 4).
 
 ```{pyodide-python}
 #| read-only: false
-def poly_cubic_list(x, coeffs):
-    """Evaluate p(x) with coeffs = [a, b, c, d]."""
-    # TODO: implement using the list of coefficients.
-    pass
-
-coeffs = [1.0, -2.0, 0.5, 3.0]
-x_val = 2.0
-
-# TODO: evaluate the polynomial at x_val.
+# TODO: implement the polynomial using a list of coefficients.
 ```
 
 ### Task 3
@@ -55,12 +46,7 @@ a list as input for the polynomial from the first task.
 
 ```{pyodide-python}
 #| read-only: false
-coeffs = [1.0, -2.0, 0.5, 3.0]
-x_val = 2.0
-
-# TODO:
-# Use packing/unpacking so that coeffs can be passed into poly_cubic.
-# Example: poly_cubic(x_val, *coeffs)
+# TODO: discuss and test packing/unpacking with your polynomial function.
 ```
 
 ### Task 4
@@ -70,15 +56,7 @@ lists of coefficients of arbitrary length.
 
 ```{pyodide-python}
 #| read-only: false
-def poly_general(x, coeffs):
-    """Evaluate a polynomial with coefficients from highest degree to constant."""
-    # TODO: implement using a loop or Horner's method.
-    pass
-
-coeffs = [1.0, -2.0, 0.5, 3.0]  # Example for a cubic.
-x_val = 2.0
-
-# TODO: evaluate poly_general(x_val, coeffs).
+# TODO: implement a general polynomial for an arbitrary coefficient list.
 ```
 
 ---
@@ -106,19 +84,7 @@ It returns a tuple with the approximated solution and the estimated error.
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-from scipy.integrate import quad
-
-def integrand(x, omega):
-    return np.sin(omega * x)
-
-omega = 2 * np.pi
-
-# TODO: compute the integral on [0, pi/2].
-result, error = quad(lambda x: integrand(x, omega), 0.0, 0.5 * np.pi)
-
-print("Integral:", result)
-print("Estimated error:", error)
+# TODO: compute the integral using quad and report the result and error.
 ```
 
 ### Task 6 - Integrals and plots
@@ -129,26 +95,7 @@ Label the axes and add a title to the plot.
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.integrate import quad
-
-def integrand(x, omega):
-    return np.sin(omega * x)
-
-omegas = np.linspace(0.0, 2 * np.pi, 1000)
-values = []
-
-for omega in omegas:
-    # TODO: compute the integral for this omega.
-    value, _ = quad(lambda x: integrand(x, omega), 0.0, 0.5 * np.pi)
-    values.append(value)
-
-plt.plot(omegas, values)
-plt.xlabel("omega")
-plt.ylabel("Integral value")
-plt.title("Integral of sin(omega x) from 0 to pi/2")
-plt.show()
+# TODO: compute the integral for many omega values and plot the results.
 ```
 
 ### Task 7 - Zeros of a function
@@ -159,21 +106,7 @@ coefficients.
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-from scipy.optimize import fsolve
-
-def poly_general(x, coeffs):
-    """Evaluate a polynomial with coefficients from highest degree to constant."""
-    # TODO: implement or reuse Task 4.
-    pass
-
-coeffs = [1.0, 1.0, -3.0]
-
-# TODO: choose an initial guess for the positive root.
-x0 = 1.0
-
-root = fsolve(lambda x: poly_general(x, coeffs), x0)
-print("Positive root:", root)
+# TODO: use fsolve to compute the positive root of x^2 + x - 3.
 ```
 
 ### Task 8 - Zeros of a parameter dependent function
@@ -189,24 +122,5 @@ Do the zeros depend linearly on $a$?
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.optimize import fsolve
-
-def poly_quadratic(x, a):
-    return a * x**2 + x - 3
-
-a_vals = np.linspace(1.0, 5.0, 50)
-roots = []
-
-for a in a_vals:
-    # TODO: choose a suitable initial guess for the positive root.
-    root = fsolve(lambda x: poly_quadratic(x, a), x0=1.0)
-    roots.append(root[0])
-
-plt.plot(a_vals, roots, marker="o")
-plt.xlabel("a")
-plt.ylabel("Positive root of a x^2 + x - 3")
-plt.title("Positive roots versus a")
-plt.show()
+# TODO: compute and plot positive roots versus a in [1, 5].
 ```

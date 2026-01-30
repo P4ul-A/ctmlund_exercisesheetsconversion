@@ -11,6 +11,8 @@ Malin Christersson, Robert Klofkorn
 This exercise demonstrates the use of matplotlib's GUI and continues Training Exercise 11.  
 This assignment has 4 tasks.
 
+Solutions: [Sheet 12 Solutions](sheet_12_solutions.qmd)
+
 ## Warming-up Exercises
 
 ### Task 1
@@ -19,11 +21,21 @@ Consult the matplotlib documentation: <https://matplotlib.org/stable/gallery/>.
 Obtain the code for the Axes Demo and run it. While there also look at other
 examples you find interesting.
 
+```{pyodide-python}
+#| read-only: false
+# TODO: obtain and run the Axes Demo example.
+```
+
 ### Task 2
 
 Obtain the code for one of the 3D plotting examples from the book Chapter 6 -
 Plotting and run it. Compare with the 3D plotting examples that you find on the
 matplotlib documentation page.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: obtain and run a 3D plotting example from the book.
+```
 
 ---
 
@@ -40,24 +52,7 @@ $[0, 2\pi]$ in the way you plotted them in Training Assignment 11, Task 2 and 3.
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-import matplotlib.pyplot as plt
-
-def taylor_sin(x, x0, omega):
-    # TODO: compute second degree Taylor polynomial of sin(omega x) about x0.
-    pass
-
-x0 = 0.0
-omega = 1.0
-
-x = np.linspace(0.0, 2.0 * np.pi, 400)
-y = np.sin(omega * x)
-yt = taylor_sin(x, x0, omega)
-
-plt.plot(x, y, label="sin(omega x)")
-plt.plot(x, yt, label="Taylor polynomial")
-plt.legend()
-plt.show()
+# TODO: plot sin(omega x) and its Taylor polynomial for given x0 and omega.
 ```
 
 ### Task 4
@@ -70,9 +65,5 @@ theorem.
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.widgets import Slider
-
-# TODO: build a GUI with sliders for x0 and omega and update the curves.
+# TODO: build a GUI to vary x0 and omega interactively.
 ```

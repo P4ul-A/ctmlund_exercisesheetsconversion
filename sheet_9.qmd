@@ -11,6 +11,8 @@ Malin Christersson, Robert Klofkorn
 In this exercise we study inheritance of classes.  
 This assignment has 4 tasks.
 
+Solutions: [Sheet 9 Solutions](sheet_9_solutions.qmd)
+
 ## Tasks
 
 ### Task 1
@@ -23,20 +25,7 @@ assigns this corner list as an attribute and also computes the edges.
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-import matplotlib.pyplot as plt
-from abc import ABC, abstractmethod
-
-class PolyGon(ABC):
-    def __init__(self, corners):
-        # TODO: store the corners and build the list of edges.
-        self.corners = corners
-        self.edges = []
-
-    @abstractmethod
-    def plot(self):
-        # TODO: draw the polygon edges using matplotlib.
-        pass
+# TODO: define the PolyGon abstract class with __init__ and plot.
 ```
 
 ### Task 2
@@ -46,15 +35,7 @@ class `PolyGon`. Provide it also with a method to compute the area.
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-
-class Rectangle(PolyGon):
-    def __init__(self, corners):
-        super().__init__(corners)
-
-    def area(self):
-        # TODO: compute and return the rectangle area.
-        pass
+# TODO: define Rectangle inheriting from PolyGon and add an area method.
 ```
 
 ### Task 3
@@ -65,12 +46,7 @@ from the class `Rectangle`.
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-
-class SpecialRectangle(Rectangle):
-    def __init__(self, x_min, x_max, y_min, y_max):
-        # TODO: build corners from the bounds and call Rectangle.__init__.
-        pass
+# TODO: define SpecialRectangle inheriting from Rectangle.
 ```
 
 ### Task 4
@@ -81,12 +57,5 @@ and `False` otherwise.
 
 ```{pyodide-python}
 #| read-only: false
-class SpecialRectangle(Rectangle):
-    def __init__(self, x_min, x_max, y_min, y_max):
-        # TODO: initialize and store bounds.
-        pass
-
-    def __contains__(self, other):
-        # TODO: return True if other is contained in self.
-        pass
+# TODO: implement __contains__ for SpecialRectangle.
 ```

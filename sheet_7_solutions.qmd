@@ -81,9 +81,10 @@ S = np.sin(D)
 ones = np.ones(len(u))
 y = S @ ones
 
-plt.plot(u, y)
-plt.xlabel("u")
-plt.ylabel("sin(D) * 1")
-plt.title("Result of sin(D) times ones vector")
+fig, ax = plt.subplots()
+ax.plot(u, y)
+ax.set_xlabel("u")
+ax.set_ylabel("sin(D) * 1")
+ax.set_title("Result of sin(D) times ones vector")
 plt.show()
 ```

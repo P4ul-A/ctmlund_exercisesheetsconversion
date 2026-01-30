@@ -12,6 +12,8 @@ The purpose of this training assignment is to repeat list comprehensions, practi
 You should not run the code before you have written down what it will do when executed.  
 This assignment has 8 tasks.
 
+Solutions: [Sheet 3 Solutions](sheet_3_solutions.qmd)
+
 ## Warming-up Exercises
 
 ### Task 1
@@ -183,12 +185,36 @@ for idx, current in enumerate(sets_to_test, start=1):
     print(f"Test {idx}: empty set subset of {current}? {result}")
 ```
 
-### Task 8
+### Task 7 & 8
 
-**Bisection Method.** A continuous function that changes sign in an interval $[a, b]$ has at least one root there. Such a root can be found by the bisection method.  
-Starting from $[a, b]$, investigate the sign change in the subintervals $[a, \tfrac{a+b}{2}]$ and $[\tfrac{a+b}{2}, b]$. If the sign changes in the first subinterval, redefine $b := \tfrac{a+b}{2}$; otherwise set $a := \tfrac{a+b}{2}$. Repeat until $b - a$ is less than a given tolerance. Note that a sign change is characterized by $f(a) f(b) < 0$.
+**Bisection Method.**  
+A continuous function that changes sign in an interval \([a, b]\) has at least one root
+in this interval. Such a root can be found by the bisection method.
 
-Implement this algorithm. It needs the initial interval $[a, b]$ and the tolerance. Test the method with the function $\arctan(x)$ and with the polynomial $f(x) = 3x^2 - 5$ in the interval $[-0.5, 0.6]$ and alternatively in $[-1.5, -0.4]$.
+Starting from \([a, b]\), investigate the sign change in the subintervals  
+\([a, \tfrac{a+b}{2}]\) and \([\tfrac{a+b}{2}, b]\).
+
+If the sign changes in the first subinterval, redefine
+$$
+b := \tfrac{a+b}{2};
+$$
+otherwise redefine
+$$
+a := \tfrac{a+b}{2}.
+$$
+
+Repeat until \(b - a\) is less than a given tolerance.
+
+Note that a sign change is characterized by
+$$
+f(a)\,f(b) < 0.
+$$
+
+Implement this algorithm. It needs the initial interval \([a, b]\) and the tolerance.
+
+Test the method with the function \(\arctan(x)\) and with the polynomial
+\(f(x) = 3x^2 - 5\) in the interval \([-0.5, 0.6]\) and alternatively in
+\([-1.5, -0.4]\).
 
 ```{pyodide-python}
 #| read-only: false
@@ -196,21 +222,10 @@ import math
 
 def bisection(f, a, b, tol=1e-6, max_iter=200):
     """Simple bisection method for a sign-changing interval [a, b]."""
-    fa = f(a)
-    fb = f(b)
-    if fa * fb > 0:
-        raise ValueError("f(a) and f(b) must have opposite signs.")
+    
+    # TODO: implement the bisection method.
 
-    for _ in range(max_iter):
-        mid = 0.5 * (a + b)
-        fm = f(mid)
-        if abs(b - a) < tol:
-            return mid
-        if fa * fm <= 0:
-            b, fb = mid, fm
-        else:
-            a, fa = mid, fm
-    return mid
+    return middle
 
 
 def f_poly(x):

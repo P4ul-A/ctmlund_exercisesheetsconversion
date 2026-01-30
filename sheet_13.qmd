@@ -11,6 +11,8 @@ Malin Christersson, Robert Klofkorn
 In this exercise we work with tests, both unit tests and pytest.  
 This assignment has 6 tasks.
 
+Solutions: [Sheet 13 Solutions](sheet_13_solutions.qmd)
+
 ## Tasks
 
 ### Task 1
@@ -20,9 +22,19 @@ described in the figure a friend found in a newspaper a while ago. Decide for
 which range of arguments `a, b` you want to design your function. Raise a
 `ValueError` if your function is called with wrong arguments.
 
+```{pyodide-python}
+#| read-only: false
+# TODO: implement crazzyPlus(a, b) and validate inputs.
+```
+
 ### Task 2
 
 What is the time complexity of the algorithm that you designed?
+
+```{pyodide-python}
+#| read-only: false
+# TODO: analyze and note the time complexity of your algorithm.
+```
 
 ### Task 3
 
@@ -32,17 +44,32 @@ You should test:
 - The correct result for several test cases
 - That the exception is raised, when wrong arguments are used.
 
+```{pyodide-python}
+#| read-only: false
+# TODO: write tests for crazzyPlus using unittest or pytest.
+```
+
 ### Task 4
 
 Use the command `%timeit` and `%%timeit` to obtain some timings about the code
 that you wrote. Profile your program using the `%lprun` command in the IPython
 shell. Consult the lecture slides for explanation about `%lprun`.
 
+```{pyodide-python}
+#| read-only: false
+# TODO: time and profile your implementation.
+```
+
 ### Extra Task 5 (in case you want an extra challenge)
 
 You are given an array of `N` random positive integers, i.e. $i \in \mathbb{N}$.
 Find the smallest positive number missing from the array. The expected time
 complexity is $O(N)$. Check that your implementation fulfills this.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: implement and test an O(N) solution.
+```
 
 ### Extra Task 6 (in case you want an extra challenge)
 
@@ -53,3 +80,8 @@ connecting adjacent lands horizontally or vertically or diagonally, i.e., in all
 8 directions. Write a code that can find all islands given in a domain (matrix).
 The expected time complexity is $O(n m)$. Experimentally check that your
 implementation fulfills this.
+
+```{pyodide-python}
+#| read-only: false
+# TODO: implement an O(n*m) island counter.
+```

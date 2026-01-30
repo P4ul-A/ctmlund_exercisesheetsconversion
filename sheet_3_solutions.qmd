@@ -16,7 +16,7 @@ distance = [
     [40, 60, 70, 0],
 ]
 
-# Build reddistance using nested loops.
+# 1) Build reddistance using nested loops.
 reddistance_loops = []
 for i in range(1, len(distance)):
     row = []
@@ -24,7 +24,7 @@ for i in range(1, len(distance)):
         row.append(distance[i][j])
     reddistance_loops.append(row)
 
-# Build reddistance using slicing (still with a simple loop).
+# 2) Build reddistance using slicing (still with a simple loop).
 reddistance_comp = []
 for i in range(1, len(distance)):
     reddistance_comp.append(distance[i][:i])
@@ -59,25 +59,7 @@ print("Custom:", symmetric_difference(A, B))
 print("Built-in:", A.symmetric_difference(B))
 ```
 
-### Task 7
-
-```{pyodide-python}
-#| read-only: false
-empty = set()
-
-sets_to_test = [
-    set(),
-    {1},
-    {1, 2, 3},
-    {"a", "b"},
-]
-
-for idx, current in enumerate(sets_to_test, start=1):
-    result = empty.issubset(current)
-    print(f"Test {idx}: {result}")
-```
-
-### Task 8
+### Task 7 & 8
 
 ```{pyodide-python}
 #| read-only: false

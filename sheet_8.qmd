@@ -12,6 +12,8 @@ In this exercise we define some classes to start to become familiar with the
 principle syntax and methods.  
 This assignment has 10 tasks.
 
+Solutions: [Sheet 8 Solutions](sheet_8_solutions.qmd)
+
 ## Warming-up Exercises
 
 ### Task 1
@@ -25,15 +27,7 @@ subtraction. Use the operator `__sub__`.
 
 ```{pyodide-python}
 #| read-only: false
-# TODO: paste the RationalNumber class from the lecture notes here.
-class RationalNumber:
-    def __init__(self, numerator, denominator=1):
-        # TODO: store numerator and denominator.
-        pass
-
-    def __sub__(self, other):
-        # TODO: implement subtraction for RationalNumber.
-        pass
+# TODO: obtain the RationalNumber example and add __sub__.
 ```
 
 ---
@@ -46,10 +40,7 @@ Define a class `ComplexNumber` and write an appropriate `__init__` method.
 
 ```{pyodide-python}
 #| read-only: false
-class ComplexNumber:
-    def __init__(self, real=0.0, imag=0.0):
-        # TODO: store the real and imaginary parts.
-        pass
+# TODO: define ComplexNumber and its __init__ method.
 ```
 
 ### Task 4
@@ -59,16 +50,7 @@ returns the imaginary part.
 
 ```{pyodide-python}
 #| read-only: false
-class ComplexNumber:
-    # TODO: add the __init__ method from Task 3.
-
-    def real_part(self):
-        """Return the real part."""
-        pass
-
-    def imag_part(self):
-        """Return the imaginary part."""
-        pass
+# TODO: add methods that return the real and imaginary parts.
 ```
 
 ### Task 5
@@ -77,16 +59,7 @@ Write methods `is_imaginary` and `is_real`. They should return Boolean answers.
 
 ```{pyodide-python}
 #| read-only: false
-class ComplexNumber:
-    # TODO: add the __init__ method from Task 3.
-
-    def is_real(self):
-        """Return True if the imaginary part is zero."""
-        pass
-
-    def is_imaginary(self):
-        """Return True if the real part is zero."""
-        pass
+# TODO: add is_real and is_imaginary methods.
 ```
 
 ### Task 6
@@ -96,12 +69,7 @@ mathematical notation $a + i b$.
 
 ```{pyodide-python}
 #| read-only: false
-class ComplexNumber:
-    # TODO: add the __init__ method from Task 3.
-
-    def __repr__(self):
-        # TODO: return a string of the form "a + i b".
-        pass
+# TODO: add a __repr__ method returning "a + i b".
 ```
 
 ### Task 7
@@ -110,18 +78,7 @@ Write a method which returns the complex number's argument and absolute value.
 
 ```{pyodide-python}
 #| read-only: false
-import math
-
-class ComplexNumber:
-    # TODO: add the __init__ method from Task 3.
-
-    def argument(self):
-        """Return the argument (angle) of the complex number."""
-        pass
-
-    def modulus(self):
-        """Return the absolute value of the complex number."""
-        pass
+# TODO: add methods for argument and modulus.
 ```
 
 ### Task 8
@@ -130,12 +87,7 @@ Write a method which checks if two complex numbers are equal.
 
 ```{pyodide-python}
 #| read-only: false
-class ComplexNumber:
-    # TODO: add the __init__ method from Task 3.
-
-    def __eq__(self, other):
-        # TODO: implement equality check.
-        pass
+# TODO: add an equality check for ComplexNumber.
 ```
 
 ### Task 9
@@ -148,35 +100,7 @@ arguments.
 
 ```{pyodide-python}
 #| read-only: false
-class ComplexNumber:
-    # TODO: add the __init__ method from Task 3.
-
-    def __add__(self, other):
-        pass
-
-    def __radd__(self, other):
-        pass
-
-    def __sub__(self, other):
-        pass
-
-    def __rsub__(self, other):
-        pass
-
-    def __mul__(self, other):
-        pass
-
-    def __rmul__(self, other):
-        pass
-
-    def __truediv__(self, other):
-        pass
-
-    def __rtruediv__(self, other):
-        pass
-
-    def __pow__(self, power):
-        pass
+# TODO: add arithmetic methods for ComplexNumber.
 ```
 
 ### Task 10
@@ -186,5 +110,5 @@ implementation.
 
 ```{pyodide-python}
 #| read-only: false
-# TODO: create ComplexNumber instances and compare with Python complex numbers.
+# TODO: test your ComplexNumber implementation against Python's complex type.
 ```

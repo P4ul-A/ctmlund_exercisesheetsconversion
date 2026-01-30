@@ -12,48 +12,60 @@ filters:
 import math
 
 class RationalNumber:
-    def __init__(self, numerator, denominator=1):
-        if denominator == 0:
-            raise ValueError("Denominator cannot be zero.")
-        g = math.gcd(int(numerator), int(denominator))
-        numerator = numerator // g
-        denominator = denominator // g
-        if denominator < 0:
-            numerator = -numerator
-            denominator = -denominator
+    # Provided in lecture 8
+    def __init__(self, numerator, denominator): 
         self.numerator = numerator
         self.denominator = denominator
-
-    def __sub__(self, other):
+    
+    def convert2float(self):
+        return self.numerator/self.denominator
+    
+    def __add__(self, other):
+        p1, q1 = self.numerator, self.denominator
         if isinstance(other, RationalNumber):
-            n = self.numerator * other.denominator - other.numerator * self.denominator
-            d = self.denominator * other.denominator
-            return RationalNumber(n, d)
-        if isinstance(other, int):
-            n = self.numerator - other * self.denominator
-            d = self.denominator
-            return RationalNumber(n, d)
-        return NotImplemented
+            p2, q2 = other.numerator, other.denominator
+        elif isinstance(other, int):
+            p2, q2 = other, 1
+        else:
+            raise TypeError("Wrong type!")
+        return RationalNumber(p1*q2 + p2*q1, q1*q2)
+    
+    def __radd__(self, other): # other + self
+        return self + other
 
+    def _gcd(self, a, b ):
+        # Computes the greatest common divisor
+        if b == 0:
+            return a
+        else:
+            return self._gcd (b , a % b ) 
+    
+    def shorten(self):                  
+        factor = self._gcd ( self.numerator, self.denominator )
+        self.numerator = self.numerator // factor
+        self.denominator = self.denominator // factor
+        
     def __repr__(self):
         return f"{self.numerator}/{self.denominator}"
+
+    # Added subtraction method
+    def __sub__(self, other):
+        p1, q1 = self.numerator, self.denominator
+        if isinstance(other, RationalNumber):
+            p2, q2 = other.numerator, other.denominator
+        elif isinstance(other, int):
+            p2, q2 = other, 1
+        else:
+            raise TypeError("Wrong type!")
+        return RationalNumber(p1*q2 - p2*q1, q1*q2)
 
 a = RationalNumber(3, 4)
 b = RationalNumber(1, 2)
 print("a - b =", a - b)
 ```
 
-### Task 3
-
-```{pyodide-python}
-#| read-only: false
-class ComplexNumber:
-    def __init__(self, real=0.0, imag=0.0):
-        self.real = real
-        self.imag = imag
-```
-
-### Task 4
+### Task 3 - 10
+#### Class Definition
 
 ```{pyodide-python}
 #| read-only: false
@@ -67,82 +79,26 @@ class ComplexNumber:
 
     def imag_part(self):
         return self.imag
-```
-
-### Task 5
-
-```{pyodide-python}
-#| read-only: false
-class ComplexNumber:
-    def __init__(self, real=0.0, imag=0.0):
-        self.real = real
-        self.imag = imag
 
     def is_real(self):
         return self.imag == 0.0
 
     def is_imaginary(self):
         return self.real == 0.0
-```
-
-### Task 6
-
-```{pyodide-python}
-#| read-only: false
-class ComplexNumber:
-    def __init__(self, real=0.0, imag=0.0):
-        self.real = real
-        self.imag = imag
 
     def __repr__(self):
         return f"{self.real} + i {self.imag}"
-```
-
-### Task 7
-
-```{pyodide-python}
-#| read-only: false
-import math
-
-class ComplexNumber:
-    def __init__(self, real=0.0, imag=0.0):
-        self.real = real
-        self.imag = imag
 
     def argument(self):
         return math.atan2(self.imag, self.real)
 
     def modulus(self):
         return math.sqrt(self.real**2 + self.imag**2)
-```
-
-### Task 8
-
-```{pyodide-python}
-#| read-only: false
-import math
-
-class ComplexNumber:
-    def __init__(self, real=0.0, imag=0.0):
-        self.real = real
-        self.imag = imag
 
     def __eq__(self, other):
         if not isinstance(other, ComplexNumber):
             return False
         return math.isclose(self.real, other.real) and math.isclose(self.imag, other.imag)
-```
-
-### Task 9
-
-```{pyodide-python}
-#| read-only: false
-import math
-
-class ComplexNumber:
-    def __init__(self, real=0.0, imag=0.0):
-        self.real = real
-        self.imag = imag
 
     def _as_complex(self, other):
         if isinstance(other, ComplexNumber):
@@ -212,14 +168,17 @@ class ComplexNumber:
         return result
 ```
 
-### Task 10
+#### Testing
 
 ```{pyodide-python}
 #| read-only: false
 # Use the class from Task 9.
 a = ComplexNumber(2.0, 1.0)
 b = ComplexNumber(-1.0, 3.0)
+c = ComplexNumber(4.20,0)
 
+print(c.is_real())
+print(c.is_imaginary())
 print("a + b =", a + b)
 print("a - b =", a - b)
 print("a * b =", a * b)

@@ -21,19 +21,20 @@ phi = np.linspace(0.0, 2.0 * np.pi, 400)
 # Plot one circle.
 radius = 0.5
 z = complex_circle(phi, radius)
-plt.plot(z.real, z.imag, label=f"r = {radius}")
+fig, ax = plt.subplots()
+ax.plot(z.real, z.imag, label=f"r = {radius}")
 
 # Plot several circles.
 radii = np.linspace(0.1, 1.0, 10)
 for r in radii:
     z = complex_circle(phi, r)
-    plt.plot(z.real, z.imag, alpha=0.6)
+    ax.plot(z.real, z.imag, alpha=0.6)
 
-plt.gca().set_aspect("equal", adjustable="box")
-plt.xlabel("Real part")
-plt.ylabel("Imaginary part")
-plt.title("Concentric circles")
-plt.legend()
+ax.set_aspect("equal", adjustable="box")
+ax.set_xlabel("Real part")
+ax.set_ylabel("Imaginary part")
+ax.set_title("Concentric circles")
+ax.legend()
 plt.show()
 ```
 
@@ -115,11 +116,12 @@ def fp_example(x):
 _, newton_errors = newton_track(f_example, fp_example, x0=2.0)
 _, bisection_errors = bisection_track(f_example, 1.0, 3.0)
 
-plt.semilogy(range(1, len(newton_errors) + 1), newton_errors, label="Newton")
-plt.semilogy(range(1, len(bisection_errors) + 1), bisection_errors, label="Bisection")
-plt.xlabel("Iteration")
-plt.ylabel("|x_{n+1} - x_n|")
-plt.title("Newton vs. Bisection convergence")
-plt.legend()
+fig, ax = plt.subplots()
+ax.semilogy(range(1, len(newton_errors) + 1), newton_errors, label="Newton")
+ax.semilogy(range(1, len(bisection_errors) + 1), bisection_errors, label="Bisection")
+ax.set_xlabel("Iteration")
+ax.set_ylabel(r"$|x_{n+1} - x_n|$")
+ax.set_title("Newton vs. Bisection convergence")
+ax.legend()
 plt.show()
 ```

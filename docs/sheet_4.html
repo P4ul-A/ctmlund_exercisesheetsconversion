@@ -230,7 +230,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"code":"from numpy import *\nfrom matplotlib import pyplot as plt\n\nx = linspace(0, 2 * pi, 1000)\nf_x = cos(x)\nf_y = sin(x)\n\nplt.plot(f_x, f_y)\nplt.xlabel(\"cos(x)\")\nplt.ylabel(\"sin(x)\")\nplt.show()","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\n\ndef complex_circle(phi, r):\n    \"\"\"Evaluate r * exp(i * phi) for arrays of phi and a scalar radius.\"\"\"\n    return r * np.exp(1j * phi)\n\n\nphi = np.linspace(0, 2 * np.pi, 400)\n\n# TODO: choose a radius and plot the circle in the complex plane.\nradius = 0.5\nz = complex_circle(phi, radius)\nplt.plot(z.real, z.imag, label=f\"r = {radius}\")\n\n# TODO: add more circles for r in [0.1, 1.0].\nfor r in np.linspace(0.1, 1.0, 10):\n    z = complex_circle(phi, r)\n    plt.plot(z.real, z.imag, alpha=0.6)\n\nplt.gca().set_aspect(\"equal\", adjustable=\"box\")\nplt.xlabel(\"Real part\")\nplt.ylabel(\"Imaginary part\")\nplt.title(\"Concentric circles from r * exp(i * phi)\")\nplt.legend()\nplt.show()","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import math\n\n\ndef newton(f, fp, x0, tol=1e-8, max_iter=400):\n    \"\"\"Newton's method returning (root, converged).\"\"\"\n    x = x0\n    for _ in range(max_iter):\n        fx = f(x)\n        fpx = fp(x)\n        if fpx == 0:\n            raise ZeroDivisionError(\"Derivative is zero; cannot continue.\")\n        x_next = x - fx / fpx\n        if abs(x_next - x) < tol:\n            return x_next, True\n        x = x_next\n    return x, False\n\n\ndef myfunc(x):\n    return x**3 - 2 * x - 5\n\n\ndef myfuncp(x):\n    return 3 * x**2 - 2\n\n\nroot, converged = newton(myfunc, myfuncp, x0=2.0, tol=1e-8)\nprint(\"Root:\", root)\nprint(\"Converged?\", converged)","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import math\nimport matplotlib.pyplot as plt\n\n# TODO:\n# Reuse or reimplement the bisection method from Exercise 3 here.\n# Collect |x_{n+1} - x_n| for both methods and plot them.\n\ndef newton_track_errors(f, fp, x0, tol=1e-8, max_iter=100):\n    errors = []\n    x = x0\n    for _ in range(max_iter):\n        fx = f(x)\n        fpx = fp(x)\n        x_next = x - fx / fpx\n        errors.append(abs(x_next - x))\n        if errors[-1] < tol:\n            break\n        x = x_next\n    return x, errors\n\n# Example function and derivative.\ndef f_example(x):\n    return x**3 - 2 * x - 5\n\n\ndef fp_example(x):\n    return 3 * x**2 - 2\n\n# Newton errors\n_, newton_errors = newton_track_errors(f_example, fp_example, x0=2.0)\n\n# Placeholder for bisection errors (fill in based on your implementation)\nbisection_errors = []\n\nplt.semilogy(range(1, len(newton_errors) + 1), newton_errors, label=\"Newton\")\nplt.semilogy(range(1, len(bisection_errors) + 1), bisection_errors, label=\"Bisection\")\nplt.xlabel(\"Iteration\")\nplt.ylabel(\"|x_{n+1} - x_n|\")\nplt.title(\"Newton vs. Bisection convergence history\")\nplt.legend()\nplt.show()","id":4,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qpyodideCellDetails = [{"code":"from numpy import *\nimport matplotlib.pyplot as plt\n\nx = linspace(0, 2*pi, 1000)\nf_x = cos(x)\nf_y = sin(x)\n\n# use subplots to create a individual figures, using plt. creates global figures\n# which can lead to problems when creating multiple plots (only showing the last one)\nfig, ax = plt.subplots()\n\nax.plot(f_x, f_y)\nax.set_xlabel('cos (x)')\nax.set_ylabel('sin (x)')\nplt.show()","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# TODO: experiment with plotting styles and legends.","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# TODO: implement f(phi, r) and plot concentric circles for varying r.","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# TODO: implement Newton's method and test it with your own function.","id":4,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# TODO: compare Newton vs. bisection iteration errors and plot the results.","id":5,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 
 </script>
@@ -546,6 +546,7 @@ window.Quarto = {
 Malin Christersson, Robert Klöfkorn</p>
 <p>The purpose of this training assignment is to experiment more with plotting and functions.<br>
 This assignment has 6 tasks.</p>
+<p>Solutions: <a href="./sheet_4_solutions.html">Sheet 4 Solutions</a></p>
 <section id="warming-up-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="warming-up-exercises">Warming-up Exercises</h2>
 <section id="task-1" class="level3">
@@ -557,6 +558,8 @@ This assignment has 6 tasks.</p>
 <section id="task-2" class="level3">
 <h3 class="anchored" data-anchor-id="task-2">Task 2</h3>
 <p>Read Chapter 6, section <em>Formatting</em> to learn how to change the plotting style and add a legend.</p>
+<div id="qpyodide-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <hr>
 </section>
 </section>
@@ -566,7 +569,7 @@ This assignment has 6 tasks.</p>
 <h3 class="anchored" data-anchor-id="task-3-complex-valued-functions">Task 3 – Complex valued functions</h3>
 <p>The complex valued function <span class="math inline">\(f(\varphi, r) = r e^{i \varphi}\)</span> describes a circle with radius <span class="math inline">\(r\)</span> in the complex plane when <span class="math inline">\(r\)</span> is fixed and <span class="math inline">\(\varphi\)</span> varies between <span class="math inline">\(0\)</span> and <span class="math inline">\(2\pi\)</span>. Set up a function that evaluates <span class="math inline">\(f\)</span> and plot it for a fixed value of <span class="math inline">\(r\)</span>. Note: the real part of a complex variable <span class="math inline">\(z\)</span> is <code>z.real</code> and the imaginary part is <code>z.imag</code>. The imaginary unit <span class="math inline">\(i\)</span> is written as <code>1j</code> in Python.</p>
 <p>Then let <span class="math inline">\(r\)</span> vary from 0.1 to 1.0 and plot the corresponding concentric circles. You should see several circles centered at the origin.</p>
-<div id="qpyodide-insertion-location-2"></div>
+<div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="task-4-eulers-formula" class="level3">
@@ -575,19 +578,20 @@ This assignment has 6 tasks.</p>
 </section>
 <section id="task-5-newtons-method" class="level3">
 <h3 class="anchored" data-anchor-id="task-5-newtons-method">Task 5 – Newton’s Method</h3>
+<p>(For this task you need knowledge from the course book Chapter 7 (Passing arguments, Return Values), and Chapter 9 (Controlling the flow inside the loop)</p>
 <p>Newton’s method iteratively finds a root of a function <span class="math inline">\(f\)</span> via</p>
 <p><span class="math display">\[
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
 \]</span></p>
 <p>Start from a value <span class="math inline">\(x_0\)</span> and stop when <span class="math inline">\(|x_{n+1} - x_n| &lt; \text{TOL}\)</span> or after at most 400 iterations.</p>
 <p>Write a function <code>newton</code> that takes <code>f</code>, <code>fp</code> (the derivative), <code>x0</code> (start value), and <code>tol</code> (tolerance). It should return the last value and a flag <code>conv</code> indicating whether convergence was observed. Try the method with a function <code>myfunc</code> of your choice and its derivative <code>myfuncp</code>.</p>
-<div id="qpyodide-insertion-location-3"></div>
+<div id="qpyodide-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="extra-task-6" class="level3">
 <h3 class="anchored" data-anchor-id="extra-task-6">Extra Task 6</h3>
 <p>Compare the number of iterations needed to find a root within tolerance <span class="math inline">\(1\times 10^{-8}\)</span> for Newton’s method and for the bisection method from Exercise 3. Store the values <span class="math inline">\(|x_{n+1} - x_n|\)</span> for each iteration <span class="math inline">\(n\)</span> for both methods and plot iteration number versus <span class="math inline">\(|x_{n+1} - x_n|\)</span>. Discuss what you observe.</p>
-<div id="qpyodide-insertion-location-4"></div>
+<div id="qpyodide-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 

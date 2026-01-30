@@ -52,7 +52,8 @@ print(value)
 ```{pyodide-python}
 #| read-only: false
 def poly_general(x, coeffs):
-    """Evaluate a polynomial using Horner's method."""
+    """Evaluate a polynomial using Horner's method. 
+    https://en.wikipedia.org/wiki/Horner_method"""
     result = 0.0
     for coeff in coeffs:
         result = result * x + coeff
@@ -97,10 +98,11 @@ for omega in omegas:
     value, _ = quad(lambda x: integrand(x, omega), 0.0, 0.5 * np.pi)
     values.append(value)
 
-plt.plot(omegas, values)
-plt.xlabel("omega")
-plt.ylabel("Integral value")
-plt.title("Integral of sin(omega x) from 0 to pi/2")
+fig, ax = plt.subplots()
+ax.plot(omegas, values)
+ax.set_xlabel("omega")
+ax.set_ylabel("Integral value")
+ax.set_title("Integral of sin(omega x) from 0 to pi/2")
 plt.show()
 ```
 
@@ -141,9 +143,10 @@ for a in a_vals:
     root = fsolve(lambda x: poly_quadratic(x, a), x0=1.0)
     roots.append(root[0])
 
-plt.plot(a_vals, roots, marker="o")
-plt.xlabel("a")
-plt.ylabel("Positive root")
-plt.title("Positive roots of a x^2 + x - 3")
+fig, ax = plt.subplots()
+ax.plot(a_vals, roots, marker="o")
+ax.set_xlabel("a")
+ax.set_ylabel("Positive root")
+ax.set_title("Positive roots of a x^2 + x - 3")
 plt.show()
 ```

@@ -11,6 +11,8 @@ Malin Christersson, Robert Klofkorn
 The purpose of this training exercise is to work with object oriented techniques in plotting.  
 This assignment has 11 tasks.
 
+Solutions: [Sheet 11 Solutions](sheet_11_solutions.qmd)
+
 ## Warming-up Exercises
 
 ### Task 1
@@ -18,11 +20,17 @@ This assignment has 11 tasks.
 Obtain the mandelbrot function code from the course book Chapter 6 - Plotting
 and create the same plot as in the book. While there glance through the chapter.
 
+```{pyodide-python}
+#| read-only: false
+# TODO: obtain the mandelbrot example and reproduce the plot.
+```
+
 ### Task 2
 
 Change the color map for the plot. Potential color maps can be obtained by
 
-```
+```{pyodide-python}
+#| read-only: false
 from matplotlib import colormaps
 print(colormaps)
 ```
@@ -40,24 +48,7 @@ Choose a polynomial of degree 3 and plot it together with its first derivative.
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-import matplotlib.pyplot as plt
-
-# TODO: choose a cubic polynomial and its derivative.
-def p(x):
-    pass
-
-def dp(x):
-    pass
-
-x = np.linspace(-3.0, 3.0, 400)
-y = p(x)
-yp = dp(x)
-
-plt.plot(x, y, label="p(x)")
-plt.plot(x, yp, label="p'(x)")
-plt.legend()
-plt.show()
+# TODO: choose a cubic polynomial and plot it with its derivative.
 ```
 
 ### Task 4
@@ -66,10 +57,7 @@ Plot a tangent segment to this curve at its inflection point(s).
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-import matplotlib.pyplot as plt
-
-# TODO: reuse the polynomial from Task 3 and add a tangent at the inflection point.
+# TODO: add a tangent segment at the inflection point(s).
 ```
 
 ### Task 5
@@ -78,10 +66,7 @@ Do the same for its extremal values.
 
 ```{pyodide-python}
 #| read-only: false
-import numpy as np
-import matplotlib.pyplot as plt
-
-# TODO: add tangents at the extrema of the polynomial.
+# TODO: add tangents at the extrema.
 ```
 
 ### Task 6

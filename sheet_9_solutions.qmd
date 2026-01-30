@@ -11,9 +11,8 @@ filters:
 #| read-only: false
 import numpy as np
 import matplotlib.pyplot as plt
-from abc import ABC, abstractmethod
 
-class PolyGon(ABC):
+class PolyGon():
     def __init__(self, corners):
         # Store corner points as NumPy arrays.
         self.corners = []
@@ -28,13 +27,13 @@ class PolyGon(ABC):
             p2 = self.corners[(i + 1) % n]
             self.edges.append((p1, p2))
 
-    @abstractmethod
     def plot(self):
         # Plot each edge as a line segment.
+        fig, ax = plt.subplots()
         for p1, p2 in self.edges:
             xs = [p1[0], p2[0]]
             ys = [p1[1], p2[1]]
-            plt.plot(xs, ys, color="black")
+            ax.plot(xs, ys, color="black")
 ```
 
 ### Task 2
@@ -58,27 +57,7 @@ class Rectangle(PolyGon):
         return length1 * length2
 ```
 
-### Task 3
-
-```{pyodide-python}
-#| read-only: false
-class SpecialRectangle(Rectangle):
-    def __init__(self, x_min, x_max, y_min, y_max):
-        self.x_min = float(x_min)
-        self.x_max = float(x_max)
-        self.y_min = float(y_min)
-        self.y_max = float(y_max)
-
-        corners = [
-            [self.x_min, self.y_min],
-            [self.x_max, self.y_min],
-            [self.x_max, self.y_max],
-            [self.x_min, self.y_max],
-        ]
-        super().__init__(corners)
-```
-
-### Task 4
+### Task 3 & 4
 
 ```{pyodide-python}
 #| read-only: false
@@ -110,5 +89,9 @@ class SpecialRectangle(Rectangle):
 # Example usage
 A = SpecialRectangle(0, 2, 0, 1)
 B = SpecialRectangle(0.5, 1.5, 0.2, 0.8)
+A.plot()
+plt.show()
+B.plot()
+plt.show()
 print("B in A?", B in A)
 ```

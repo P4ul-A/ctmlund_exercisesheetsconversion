@@ -102,10 +102,12 @@ yplot = []
 for x in xplot:
     yplot.append(math.atan(x))
 
-plt.plot(xplot, yplot)
-plt.xlabel("x")
-plt.ylabel("arctan(x)")
-plt.title("Plot of arctan(x) versus x")
+fig, ax = plt.subplots()
+
+ax.plot(xplot, yplot)
+ax.set_xlabel("x")
+ax.set_ylabel("arctan(x)")
+ax.set_title("Plot of arctan(x) versus x")
 plt.show()
 ```
 
@@ -122,11 +124,12 @@ for i in range(1, 201):
 print("Sum:", s)
 ```
 
-### Task 14.1
+### Task 14.1 & 14.2
 
 ```{pyodide-python}
 #| read-only: false
 import math
+import matplotlib.pyplot as plt
 
 h = 1 / 1000
 a = -0.5
@@ -153,14 +156,6 @@ for n in range(0, N - 2):
     u.append(u_next)
 
 print("Length:", len(u))
-```
-
-### Task 14.2
-
-```{pyodide-python}
-#| read-only: false
-import math
-import matplotlib.pyplot as plt
 
 h = 1 / 1000
 a = -0.5
@@ -170,10 +165,12 @@ td = []
 for n in range(0, 1001):
     td.append(n * h)
 
-plt.plot(td, u)
-plt.xlabel("t")
-plt.ylabel("u(t)")
-plt.title("Approximate solution u_n")
+fig, ax1 = plt.subplots()
+
+ax1.plot(td, u)
+ax1.set_xlabel("t")
+ax1.set_ylabel("u(t)")
+ax1.set_title("Approximate solution u_n")
 plt.show()
 
 # Compute and plot the error.
@@ -181,9 +178,11 @@ errors = []
 for t, u_val in zip(td, u):
     errors.append(abs(math.exp(a * t) - u_val))
 
-plt.plot(td, errors)
-plt.xlabel("t")
-plt.ylabel("|e^{a t} - u_n|")
-plt.title("Error between exact and approximate solution")
+fig, ax2 = plt.subplots()
+
+ax2.plot(td, errors)
+ax2.set_xlabel("t")
+ax2.set_ylabel("|e^{a t} - u_n|")
+ax2.set_title("Error between exact and approximate solution")
 plt.show()
 ```

@@ -3,4 +3,8 @@ two exercise 6, one named 6a, renamed 6a to 7
 exercise 10 needs a file to work, skipped for now
 11a GUI part
 
-Check sheet 2 14.2 - no labels in the matplotlib?
+Check sheet 2 14.1 & 2
+needs an additional plt.show() to display the both graphs?
+
+11
+- mandelbrot example

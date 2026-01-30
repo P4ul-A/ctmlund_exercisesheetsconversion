@@ -22,9 +22,10 @@ x = np.linspace(-3.0, 3.0, 400)
 y = p(x)
 yp = dp(x)
 
-plt.plot(x, y, label="p(x)")
-plt.plot(x, yp, label="p'(x)")
-plt.legend()
+fig, ax = plt.subplots()
+ax.plot(x, y, label="p(x)")
+ax.plot(x, yp, label="p'(x)")
+ax.legend()
 plt.show()
 ```
 
@@ -53,10 +54,11 @@ slope = dp(x0)
 x_tan = np.linspace(x0 - 1.0, x0 + 1.0, 50)
 y_tan = y0 + slope * (x_tan - x0)
 
-plt.plot(x, y, label="p(x)")
-plt.plot(x, yp, label="p'(x)")
-plt.plot(x_tan, y_tan, label="Tangent at inflection")
-plt.legend()
+fig, ax = plt.subplots()
+ax.plot(x, y, label="p(x)")
+ax.plot(x, yp, label="p'(x)")
+ax.plot(x_tan, y_tan, label="Tangent at inflection")
+ax.legend()
 plt.show()
 ```
 
@@ -88,11 +90,12 @@ x_tan2 = np.linspace(x2 - 1.0, x2 + 1.0, 50)
 y_tan1 = y1 + 0.0 * (x_tan1 - x1)
 y_tan2 = y2 + 0.0 * (x_tan2 - x2)
 
-plt.plot(x, y, label="p(x)")
-plt.plot(x, yp, label="p'(x)")
-plt.plot(x_tan1, y_tan1, label="Tangent at x=-1")
-plt.plot(x_tan2, y_tan2, label="Tangent at x=1")
-plt.legend()
+fig, ax = plt.subplots()
+ax.plot(x, y, label="p(x)")
+ax.plot(x, yp, label="p'(x)")
+ax.plot(x_tan1, y_tan1, label="Tangent at x=-1")
+ax.plot(x_tan2, y_tan2, label="Tangent at x=1")
+ax.legend()
 plt.show()
 ```
 
@@ -119,10 +122,14 @@ slope = dp(x0)
 x_tan = np.linspace(x0 - 1.0, x0 + 1.0, 50)
 y_tan = y0 + slope * (x_tan - x0)
 
-plt.plot(x, y, label="p(x)")
-plt.plot(x, yp, label="p'(x)")
-plt.plot(x_tan, y_tan, color="black", linestyle=":", label="Tangent")
-plt.legend()
+fig, ax = plt.subplots()
+ax.plot(x, y, label="p(x)")
+ax.plot(x, yp, label="p'(x)")
+ax.plot(x_tan, y_tan, color="black", linestyle=":", label="Tangent")
+ax.plot(x_tan1, y_tan1,color="black", linestyle=":", label="Tangent at x=-1")
+ax.plot(x_tan2, y_tan2, color="black", linestyle=":",label="Tangent at x=1")
+
+ax.legend()
 plt.show()
 ```
 
@@ -143,9 +150,10 @@ x = np.linspace(-3.0, 3.0, 400)
 y = p(x)
 yp = dp(x)
 
-plt.plot(x, y, label="p(x)", linewidth=3)
-plt.plot(x, yp, label="p'(x)", linewidth=1)
-plt.legend()
+fig, ax = plt.subplots()
+ax.plot(x, y, label="p(x)", linewidth=3)
+ax.plot(x, yp, label="p'(x)", linewidth=1)
+ax.legend()
 plt.show()
 ```
 
@@ -169,11 +177,38 @@ yp = dp(x)
 x0 = 0.0
 y0 = p(x0)
 
-plt.plot(x, y, label="p(x)", linewidth=3)
-plt.plot(x, yp, label="p'(x)", linewidth=1)
-plt.annotate("Inflection", xy=(x0, y0), xytext=(0.5, 2.0))
-plt.legend()
+fig, ax = plt.subplots()
+ax.plot(x, y, label="p(x)", linewidth=3)
+ax.plot(x, yp, label="p'(x)", linewidth=1)
+
+ # Inflection point
+ax.scatter([x0], [y0])
+ax.annotate(
+    "Inflection",
+    xy=(x0, y0),
+)
+# Extrema
+x1, x2 = -1.0, 1.0
+y1, y2 = p(x1), p(x2)
+
+ax.scatter([x1, x2], [y1, y2])
+ax.annotate(
+    "Local max",
+    xy=(x1, y1),
+)
+ax.annotate(
+    "Local min",
+    xy=(x2, y2),
+)
+
+ax.legend()
 plt.show()
+
+
+
+
+
+
 ```
 
 ### Task 9
@@ -194,19 +229,34 @@ y = p(x)
 yp = dp(x)
 
 x0 = 0.0
-x1 = -1.0
-x2 = 1.0
 y0 = p(x0)
-y1 = p(x1)
-y2 = p(x2)
 
-plt.plot(x, y, label="p(x)", linewidth=3)
-plt.plot(x, yp, label="p'(x)", linewidth=1)
+fig, ax = plt.subplots()
+ax.plot(x, y, label="p(x)", linewidth=3)
+ax.plot(x, yp, label="p'(x)", linewidth=1)
 
-plt.xticks([x1, x0, x2])
-plt.yticks([y1, y0, y2])
+ # Inflection point
+ax.scatter([x0], [y0])
+ax.annotate(
+    f"Inflection\n({x0:.2f},{y0:.2f})",
+    xy=(x0, y0),
+)
 
-plt.legend()
+# Extrema
+x1, x2 = -1.0, 1.0
+y1, y2 = p(x1), p(x2)
+
+ax.scatter([x1, x2], [y1, y2])
+ax.annotate(
+    f"Local max\n({x1:.2f},{y1:.2f})",
+    xy=(x1, y1),
+)
+ax.annotate(
+    f"Local min\n({x2:.2f},{y2:.2f})",
+    xy=(x2, y2),
+)
+
+ax.legend()
 plt.show()
 ```
 
@@ -227,10 +277,37 @@ x = np.linspace(-3.0, 3.0, 400)
 y = p(x)
 yp = dp(x)
 
-plt.plot(x, y, label="p(x)", linewidth=3)
-plt.plot(x, yp, label="p'(x)", linewidth=1)
-plt.title("Cubic polynomial and its derivative")
-plt.legend()
+x0 = 0.0
+y0 = p(x0)
+
+fig, ax = plt.subplots()
+ax.plot(x, y, label="p(x)", linewidth=3)
+ax.plot(x, yp, label="p'(x)", linewidth=1)
+ax.set_title("Cubic polynomial and its derivative")
+ax.legend()
+
+
+ # Inflection point
+ax.scatter([x0], [y0])
+ax.annotate(
+    f"Inflection\n({x0:.2f},{y0:.2f})",
+    xy=(x0, y0),
+)
+
+# Extrema
+x1, x2 = -1.0, 1.0
+y1, y2 = p(x1), p(x2)
+
+ax.scatter([x1, x2], [y1, y2])
+ax.annotate(
+    f"Local max\n({x1:.2f},{y1:.2f})",
+    xy=(x1, y1),
+)
+ax.annotate(
+    f"Local min\n({x2:.2f},{y2:.2f})",
+    xy=(x2, y2),
+)
+
 plt.show()
 ```
 
@@ -251,11 +328,38 @@ x = np.linspace(-3.0, 3.0, 400)
 y = p(x)
 yp = dp(x)
 
-plt.plot(x, y, label="p(x)", linewidth=3)
-plt.plot(x, yp, label="p'(x)", linewidth=1)
-plt.title("Cubic polynomial and its derivative")
-plt.legend()
+x0 = 0.0
+y0 = p(x0)
 
-plt.savefig("sheet_11_polynomial.png", dpi=150)
+fig, ax = plt.subplots()
+ax.plot(x, y, label="p(x)", linewidth=3)
+ax.plot(x, yp, label="p'(x)", linewidth=1)
+ax.set_title("Cubic polynomial and its derivative")
+ax.legend()
+
+
+ # Inflection point
+ax.scatter([x0], [y0])
+ax.annotate(
+    f"Inflection\n({x0:.2f},{y0:.2f})",
+    xy=(x0, y0),
+)
+
+# Extrema
+x1, x2 = -1.0, 1.0
+y1, y2 = p(x1), p(x2)
+
+ax.scatter([x1, x2], [y1, y2])
+ax.annotate(
+    f"Local max\n({x1:.2f},{y1:.2f})",
+    xy=(x1, y1),
+)
+ax.annotate(
+    f"Local min\n({x2:.2f},{y2:.2f})",
+    xy=(x2, y2),
+)
+
+# This does not do anything in this notebook, but in a local Python
+fig.savefig("sheet_11_polynomial.png", dpi=150)
 plt.show()
 ```
