@@ -230,7 +230,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\ndef taylor_sin(x, x0, omega):\n    \"\"\"Second degree Taylor polynomial of sin(omega x) about x0.\"\"\"\n    f0 = np.sin(omega * x0)\n    f1 = omega * np.cos(omega * x0)\n    f2 = -omega**2 * np.sin(omega * x0)\n    dx = x - x0\n    return f0 + f1 * dx + 0.5 * f2 * dx**2\n\nx0 = 0.5\nomega = 2.0\n\nx = np.linspace(0.0, 2.0 * np.pi, 400)\ny = np.sin(omega * x)\nyt = taylor_sin(x, x0, omega)\n\nfig, ax = plt.subplots()\nax.plot(x, y, label=\"sin(omega x)\", linewidth=2)\nax.plot(x, yt, label=\"Taylor polynomial\", linestyle=\"--\")\nax.legend()\nplt.show()","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.widgets import Slider\n\ndef taylor_sin(x, x0, omega):\n    f0 = np.sin(omega * x0)\n    f1 = omega * np.cos(omega * x0)\n    f2 = -omega**2 * np.sin(omega * x0)\n    dx = x - x0\n    return f0 + f1 * dx + 0.5 * f2 * dx**2\n\nx = np.linspace(0.0, 2.0 * np.pi, 400)\nx0_init = 0.5\nomega_init = 2.0\n\nfig, ax = plt.subplots()\nfig.subplots_adjust(bottom=0.25)\n\nline_f, = ax.plot(x, np.sin(omega_init * x), label=\"sin(omega x)\", linewidth=2)\nline_t, = ax.plot(x, taylor_sin(x, x0_init, omega_init), label=\"Taylor\", linestyle=\"--\")\nax.legend()\nax.set_xlabel(\"x\")\nax.set_ylabel(\"y\")\n\nax_x0 = fig.add_axes([0.2, 0.1, 0.65, 0.03])\nax_omega = fig.add_axes([0.2, 0.05, 0.65, 0.03])\n\nslider_x0 = Slider(ax_x0, \"x0\", 0.0, 2.0 * np.pi, valinit=x0_init)\nslider_omega = Slider(ax_omega, \"omega\", 0.1, 6.0, valinit=omega_init)\n\ndef update(_):\n    x0 = slider_x0.val\n    omega = slider_omega.val\n    line_f.set_ydata(np.sin(omega * x))\n    line_t.set_ydata(taylor_sin(x, x0, omega))\n    fig.canvas.draw_idle()\n\nslider_x0.on_changed(update)\nslider_omega.on_changed(update)\n\nplt.show()","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qpyodideCellDetails = [{"code":"\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nnp.random.seed(69)  # Fixing random state for reproducibility.\n\n# create some data to use for the plot\ndt = 0.001\nt = np.arange(0.0, 10.0, dt)\nr = np.exp(-t[:1000] / 0.05)  # impulse response\nx = np.random.randn(len(t))\ns = np.convolve(x, r)[:len(x)] * dt  # colored noise\n\nfig, main_ax = plt.subplots()\nmain_ax.plot(t, s)\nmain_ax.set_xlim(0, 1)\nmain_ax.set_ylim(1.1 * np.min(s), 2 * np.max(s))\nmain_ax.set_xlabel('time (s)')\nmain_ax.set_ylabel('current (nA)')\nmain_ax.set_title('Gaussian colored noise')\n\n# this is an inset Axes over the main Axes\nright_inset_ax = fig.add_axes([.65, .6, .2, .2], facecolor='k')\nright_inset_ax.hist(s, 400, density=True)\nright_inset_ax.set(title='Probability', xticks=[], yticks=[])\n\n# this is another inset Axes over the main Axes\nleft_inset_ax = fig.add_axes([.2, .6, .2, .2], facecolor='k')\nleft_inset_ax.plot(t[:len(r)], r)\nleft_inset_ax.set(title='Impulse response', xlim=(0, .2), xticks=[], yticks=[])\n\nplt.show()","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# TODO: obtain and run a 3D plotting example from the book.","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\ndef taylor_sin(x, x0, omega):\n    \"\"\"Second degree Taylor polynomial of sin(omega x) about x0.\"\"\"\n    f0 = np.sin(omega * x0)\n    f1 = omega * np.cos(omega * x0)\n    f2 = -omega**2 * np.sin(omega * x0)\n    dx = x - x0\n    return f0 + f1 * dx + 0.5 * f2 * dx**2\n\nx0 = 0.5\nomega = 2.0\n\nx = np.linspace(0.0, 2.0 * np.pi, 400)\ny = np.sin(omega * x)\nyt = taylor_sin(x, x0, omega)\n\nfig, ax = plt.subplots()\nax.plot(x, y, label=\"sin(omega x)\", linewidth=2)\nax.plot(x, yt, label=\"Taylor polynomial\", linestyle=\"--\")\nax.legend()\nplt.show()","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Interactive plot does not work in this environment, \n# copy the code to your local machine to run it.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.widgets import Slider\n\ndef taylor_sin(x, x0, omega):\n    f0 = np.sin(omega * x0)\n    f1 = omega * np.cos(omega * x0)\n    f2 = -omega**2 * np.sin(omega * x0)\n    dx = x - x0\n    return f0 + f1 * dx + 0.5 * f2 * dx**2\n\nx = np.linspace(0.0, 2.0 * np.pi, 400)\nx0_init = 0.5\nomega_init = 2.0\n\nfig, ax = plt.subplots()\nfig.subplots_adjust(bottom=0.25)\n\nline_f, = ax.plot(x, np.sin(omega_init * x), label=\"sin(omega x)\", linewidth=2)\nline_t, = ax.plot(x, taylor_sin(x, x0_init, omega_init), label=\"Taylor\", linestyle=\"--\")\nax.legend()\nax.set_xlabel(\"x\")\nax.set_ylabel(\"y\")\n\nax_x0 = fig.add_axes([0.2, 0.1, 0.65, 0.03])\nax_omega = fig.add_axes([0.2, 0.05, 0.65, 0.03])\n\nslider_x0 = Slider(ax_x0, \"x0\", 0.0, 2.0 * np.pi, valinit=x0_init)\nslider_omega = Slider(ax_omega, \"omega\", 0.1, 6.0, valinit=omega_init)\n\ndef update(_):\n    x0 = slider_x0.val\n    omega = slider_omega.val\n    line_f.set_ydata(np.sin(omega * x))\n    line_t.set_ydata(taylor_sin(x, x0, omega))\n    fig.canvas.draw_idle()\n\nslider_x0.on_changed(update)\nslider_omega.on_changed(update)\n\nplt.show()","id":4,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 
 </script>
@@ -466,7 +466,9 @@ globalThis._qpyodideGetInstance = function() {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#task-3" id="toc-task-3" class="nav-link active" data-scroll-target="#task-3">Task 3</a></li>
+  <li><a href="#task-1" id="toc-task-1" class="nav-link active" data-scroll-target="#task-1">Task 1</a></li>
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
+  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
   <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4">Task 4</a></li>
   </ul>
 </nav>
@@ -503,14 +505,25 @@ globalThis._qpyodideGetInstance = function() {
 </header>
 
 
+<section id="task-1" class="level3">
+<h3 class="anchored" data-anchor-id="task-1">Task 1</h3>
+<p>Axes demo: <a href="https://matplotlib.org/stable/gallery/subplots_axes_and_figures/axes_demo.html" class="uri">https://matplotlib.org/stable/gallery/subplots_axes_and_figures/axes_demo.html</a>.</p>
+<div id="qpyodide-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="task-2" class="level3">
+<h3 class="anchored" data-anchor-id="task-2">Task 2</h3>
+<div id="qpyodide-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
 <section id="task-3" class="level3">
 <h3 class="anchored" data-anchor-id="task-3">Task 3</h3>
-<div id="qpyodide-insertion-location-1"></div>
+<div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="task-4" class="level3">
 <h3 class="anchored" data-anchor-id="task-4">Task 4</h3>
-<div id="qpyodide-insertion-location-2"></div>
+<div id="qpyodide-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 

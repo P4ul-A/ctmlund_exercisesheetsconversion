@@ -8,3 +8,6 @@ needs an additional plt.show() to display the both graphs?
 
 11
 - mandelbrot example
+
+12 
+- get 3D example from the book
